@@ -984,6 +984,11 @@ function resetToHome() {
     if (doubanArea) {
         const showDouban = getBoolConfig('doubanEnabled', false);
         doubanArea.classList.toggle('hidden', !showDouban);
+
+        // 如果豆瓣热门应该显示，则调用其专属的检查加载函数
+        if (showDouban && typeof window.reloadDoubanIfNeeded === 'function') {
+            window.reloadDoubanIfNeeded();
+        }
     }
 
     // 清理搜索缓存
