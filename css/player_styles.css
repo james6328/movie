@@ -13,7 +13,6 @@
   position: relative;
 }
 
-
 /* 确保 Vidstack 播放器和其内部 video 元素正确缩放 */
 #player,
 media-player {
@@ -80,10 +79,13 @@ media-player {
 
 /* 选集按钮样式 */
 .episode-active {
-  background: #3b82f6 !important;
-  border-color: #60a5fa !important;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color)) !important;
+  border-color: var(--primary-color) !important;
   color: #fff !important;
-  font-weight: bold;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3) !important;
+  transform: translateY(-1px) !important;
+  border-radius: 8px !important;
 }
 
 .episode-grid {
@@ -188,24 +190,11 @@ input:disabled+.slider {
 /* 锁屏样式 - 适配 Vidstack */
 .player-container.player-locked #lock-button {
   opacity: 1 !important;
-  /* 确保锁屏按钮本身总是可见的 */
   pointer-events: auto !important;
   z-index: 51;
-  /* 确保它在最上层，可以被点击 */
 }
-
-/* 锁屏样式 - 适配 Vidstack 的plyr style
-.player-locked .plyr {
-  pointer-events: none !important;
-}
-
-.player-locked .plyr__controls {
-  display: none !important;
-}
- */
 
 /* Vidstack 的 Default Layout 锁屏样式 */
-/* 确保锁定状态下控制条保持隐藏 */
 .player-locked .vds-controls {
   display: none !important;
   pointer-events: none !important;
@@ -218,13 +207,11 @@ input:disabled+.slider {
 
 .player-locked .vds-gestures {
   display: none !important;
-  /* 最彻底的解决方案 */
 }
 
 /* 确保播放器原生控制条不会覆盖功能按钮菜单 */
 .vds-controls {
   z-index: 50 !important;
-  /* 低于功能菜单的z-index */
 }
 
 media-player .vds-controls {
@@ -235,22 +222,12 @@ media-player .vds-controls-group {
   z-index: 50 !important;
 }
 
-/* 确保所有播放器UI元素都不会覆盖功能菜单 */
-/* media-player * {
-  z-index: 50 !important;
-} 
-*/
-
-/* 但是要确保下拉菜单有更高的z-index */
-
 /* 自定义右侧控制条 - 覆盖在播放器上，与底部控制条同步 */
 #custom-right-controls {
   position: absolute;
   top: 50%;
-  /* 将顶部定位改为50% */
   right: 1rem;
   transform: translateY(-50%);
-  /* 使用transform向上偏移自身高度的一半，实现垂直居中 */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -287,7 +264,6 @@ media-player:focus-within #custom-right-controls {
   height: 32px;
   border: none;
   background: transparent;
-  /* Current background */
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.9);
@@ -325,19 +301,9 @@ media-player:focus-within #custom-right-controls {
 /* 确保按钮图标居中 */
 #web-fullscreen-control-btn svg {
   width: 16px;
-  /* 调整图标宽度，使其更小 */
   height: 16px;
-  /* 调整图标高度，使其更小 */
   stroke-width: 2;
 }
-
-
-/* 在网页全屏模式下，右侧控制条始终显示 
-.web-fullscreen-active #custom-right-controls {
-  opacity: 1 !important;
-  pointer-events: auto !important;
-} 
-*/
 
 #play-settings-dropdown,
 #line-switch-dropdown,
@@ -352,22 +318,12 @@ media-player:focus-within #custom-right-controls {
 }
 
 /* 功能控制条的父容器 - 减小padding */
-.p-6.bg-white\/5 {
-  position: relative;
-  z-index: 100;
-  padding: 0.75rem !important;
-  /* 大幅减小padding */
-}
-
-/* 确保功能控制条容器有足够高的z-index */
+.p-6.bg-white\/5,
 .bg-white\/5.backdrop-blur-md {
   position: relative;
   z-index: 100;
   padding: 0.75rem !important;
-  /* 大幅减小padding */
 }
-
-/* end 锁屏样式 */
 
 /* 选集按钮样式（现代简约风格） */
 #episode-grid button:not(.episode-active) {
@@ -388,18 +344,6 @@ media-player:focus-within #custom-right-controls {
   border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* 选集按钮激活状态（现代简约风格） */
-.episode-active {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color)) !important;
-  border-color: var(--primary-color) !important;
-  color: #fff !important;
-  font-weight: 600 !important;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3) !important;
-  transform: translateY(-1px) !important;
-  border-radius: 8px !important;
-  /* 保持与非选中状态一致的圆角 */
 }
 
 /* 现代简约图标按钮样式 */
@@ -429,20 +373,15 @@ media-player:focus-within #custom-right-controls {
   backdrop-filter: blur(10px);
   color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
-  /* 稍微减小圆角 */
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  /* 减小间距 */
   font-weight: 500;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  /* 减小阴影 */
   padding: 0.5rem 0.75rem;
-  /* 减小padding */
   font-size: 0.875rem;
-  /* 减小字体 */
 }
 
 #prev-episode:hover:not(:disabled),
@@ -475,18 +414,14 @@ media-player:focus-within #custom-right-controls {
 /* 确保集数信息也有一致的现代简约样式 */
 #episode-info-span {
   font-size: 0.875rem;
-  /* 减小字体 */
   color: rgba(255, 255, 255, 0.9);
   font-weight: 600;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  /* 与按钮保持一致 */
   padding: 0.5rem 0.75rem;
-  /* 减小padding，与按钮一致 */
   height: auto;
-  /* 确保高度自适应 */
   display: none;
   align-items: center;
   justify-content: center;
@@ -494,50 +429,8 @@ media-player:focus-within #custom-right-controls {
 
 /* 统一所有控制按钮的间距和排版 */
 .flex.items-center.justify-between.p-6 {
-  padding: 0.75rem 1rem;
-  /* 大幅减小padding */
+  padding: 0.75rem 1rem !important;
   margin-bottom: 0.25rem;
-  /* 减小底部间距 */
-}
-
-/* 响应式调整 */
-@media (max-width: 768px) {
-
-  #prev-episode,
-  #next-episode {
-    padding: 0.375rem 0.5rem;
-    /* 进一步减小padding */
-    font-size: 0.75rem;
-    /* 进一步减小字体 */
-    gap: 0.375rem;
-    /* 减小图标和文字间距 */
-    min-height: 36px;
-    /* 设置最小高度 */
-  }
-
-  #prev-episode svg,
-  #next-episode svg {
-    width: 14px;
-    /* 减小图标 */
-    height: 14px;
-  }
-
-  #episode-info-span {
-    font-size: 0.75rem;
-    /* 进一步减小字体 */
-    padding: 0.375rem 0.5rem;
-    /* 与按钮保持一致 */
-    min-height: 36px;
-    /* 与按钮保持一致的高度 */
-  }
-
-  /* 进一步减小移动端区域间距 */
-  .flex.items-center.justify-between.p-6 {
-    padding: 0.5rem 0.75rem;
-    /* 移动端更小的padding */
-    margin-bottom: 0.125rem;
-    /* 更小的底部间距 */
-  }
 }
 
 /* 开关文本标签样式优化 */
@@ -567,7 +460,6 @@ media-player:focus-within #custom-right-controls {
   background: rgba(255, 255, 255, 0.05);
 }
 
-
 /* 添加焦点状态 */
 .switch input:focus+.slider {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
@@ -592,27 +484,6 @@ media-player:focus-within #custom-right-controls {
   animation: switchOn 0.2s ease-out;
 }
 
-/* 响应式调整 */
-@media (max-width: 768px) {
-  .switch {
-    width: 40px;
-    height: 22px;
-  }
-
-  .slider:before {
-    width: 16px;
-    height: 16px;
-  }
-
-  input:checked+.slider:before {
-    transform: translateX(18px);
-  }
-
-  .control-label {
-    font-size: 0.8125rem;
-  }
-}
-
 /* 隐藏 "选集" 二字 */
 #episodes-container h2 {
   display: none
@@ -624,9 +495,7 @@ media-player:focus-within #custom-right-controls {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-end;
-  /* 按钮靠右对齐 */
   gap: 10px;
-  /* 统一固定间距 */
   width: 100%;
 }
 
@@ -675,11 +544,8 @@ media-player:focus-within #custom-right-controls {
 /* 新增：被禁用的控制按钮容器的样式 */
 .control-btn-container.control-disabled {
   pointer-events: none;
-  /* 彻底禁用鼠标事件，无法再触发 hover 或 click */
   opacity: 0.4;
-  /* 视觉上变暗，表示不可用 */
   filter: grayscale(80%);
-  /* （可选）进一步灰度化，增强禁用感 */
 }
 
 /* 强化：确保锁屏按钮激活时，其容器的透明度不会被错误影响 */
@@ -706,18 +572,13 @@ media-player:focus-within #custom-right-controls {
 @media (min-width: 769px) {
   .player-control-bar {
     justify-content: flex-end;
-    /* 桌面端按钮靠右对齐 */
     gap: 0.75rem;
-    /* 适当增加按钮间距 */
   }
 
   .control-btn {
     padding: 0.5rem 0.75rem;
-    /* 与上一集/下一集按钮保持一致的padding */
     gap: 0.5rem;
-    /* 与上一集/下一集按钮保持一致的图标文字间距 */
     min-height: 44px;
-    /* 确保与上一集/下一集按钮高度一致 */
   }
 
   .control-text {
@@ -742,32 +603,22 @@ media-player:focus-within #custom-right-controls {
 
   .player-control-bar {
     gap: 0;
-    /* 移除间距 */
     justify-content: space-between;
-    /* 均匀分布 */
     flex-wrap: nowrap;
-    /* 防止换行 */
     width: 100%;
-    /* 确保占满宽度 */
   }
 
   .control-btn {
     width: 100%;
-    /* 占满容器宽度 */
     height: 40px;
-    /* 固定高度 */
     min-width: unset;
-    /* 移除最小宽度限制 */
     min-height: 40px;
-    /* 确保最小高度 */
     padding: 0;
-    /* 移除内边距 */
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0;
     border-radius: 8px;
-    /* 稍微减小圆角，更统一 */
   }
 
   /* 移动端隐藏文字 */
@@ -778,17 +629,59 @@ media-player:focus-within #custom-right-controls {
   /* 统一所有按钮内的图标大小 */
   .control-icon {
     width: 18px !important;
-    /* 统一所有图标大小 */
     height: 18px !important;
+  }
+
+  .switch {
+    width: 40px;
+    height: 22px;
+  }
+
+  .slider:before {
+    width: 16px;
+    height: 16px;
+  }
+
+  input:checked+.slider:before {
+    transform: translateX(18px);
+  }
+
+  .control-label {
+    font-size: 0.8125rem;
+  }
+
+  /* 响应式调整 */
+  #prev-episode,
+  #next-episode {
+    padding: 0.375rem 0.5rem;
+    font-size: 0.75rem;
+    gap: 0.375rem;
+    min-height: 36px;
+  }
+
+  #prev-episode svg,
+  #next-episode svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  #episode-info-span {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.5rem;
+    min-height: 36px;
+  }
+
+  /* 进一步减小移动端区域间距 */
+  .flex.items-center.justify-between.p-6 {
+    padding: 0.5rem 0.75rem !important;
+    margin-bottom: 0.125rem;
   }
 }
 
 @media (max-width: 480px) {
   .player-control-bar {
     gap: 0.25rem;
-    /* 更小的间距 */
     justify-content: space-evenly;
-    /* 更均匀的分布 */
   }
 
   .control-btn {
@@ -796,9 +689,7 @@ media-player:focus-within #custom-right-controls {
     min-height: 36px;
     padding: 0.5rem;
     flex: 1;
-    /* 让按钮平均分配空间 */
     max-width: 50px;
-    /* 限制最大宽度 */
   }
 
   .control-btn svg {
@@ -969,34 +860,6 @@ media-player:focus-within #custom-right-controls {
   transform: translateY(-1px);
 }
 
-@media (max-width: 768px) {
-  .progress-restore-card {
-    padding: 2rem 1.5rem;
-    min-width: 0;
-    max-width: 95vw;
-    margin: 1rem;
-  }
-
-  .progress-modal-title {
-    font-size: 1.2rem;
-  }
-
-  .progress-modal-content {
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .progress-modal-actions {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .progress-modal-btn {
-    width: 100%;
-    padding: 0.875rem 1rem;
-  }
-}
-
 /* 跳过片头和片尾下拉菜单样式*/
 .skip-control-container {
   position: relative;
@@ -1135,30 +998,6 @@ media-player:focus-within #custom-right-controls {
   transform: translateY(-1px);
 }
 
-/* 响应式调整 */
-@media (max-width: 768px) {
-  #skip-control-dropdown {
-    width: clamp(160px, 80vw, 200px);
-    padding: 14px;
-  }
-
-  #skip-control-dropdown label {
-    font-size: 0.8125rem;
-    min-width: 55px;
-  }
-
-  #skip-control-dropdown input[type="number"] {
-    padding: 7px 10px;
-    font-size: 0.8125rem;
-  }
-
-  #skip-control-dropdown button {
-    padding: 9px 14px;
-    font-size: 0.8125rem;
-  }
-}
-
-/* 线路切换菜单样式 */
 /* 线路切换菜单样式 */
 .line-switch-container {
   position: relative;
@@ -1183,32 +1022,6 @@ media-player:focus-within #custom-right-controls {
   z-index: 10000;
   margin-bottom: 8px;
   backdrop-filter: blur(20px);
-}
-
-/* 移动端防止溢出 */
-@media (max-width: 768px) {
-  #line-switch-dropdown {
-    width: clamp(160px, 80vw, 200px);
-    padding: 10px;
-    /* 防止溢出到屏幕左侧 */
-    left: auto;
-    right: 0;
-    transform: translateX(0);
-  }
-
-  /* 如果按钮靠近右边缘，调整下拉菜单位置 */
-  .line-switch-container:last-child #line-switch-dropdown,
-  .line-switch-container:nth-last-child(-n+2) #line-switch-dropdown {
-    right: 0;
-    left: auto;
-  }
-
-  /* 如果按钮靠近左边缘，调整下拉菜单位置 */
-  .line-switch-container:first-child #line-switch-dropdown,
-  .line-switch-container:nth-child(-n+2) #line-switch-dropdown {
-    left: 0;
-    right: auto;
-  }
 }
 
 #line-switch-dropdown:not(.hidden) {
@@ -1297,19 +1110,6 @@ media-player:focus-within #custom-right-controls {
   background: rgba(255, 255, 255, 0.25);
 }
 
-/* 响应式调整 */
-@media (max-width: 768px) {
-  #line-switch-dropdown {
-    width: clamp(160px, 80vw, 200px);
-    padding: 10px;
-  }
-
-  #line-switch-dropdown button {
-    padding: 8px 10px;
-    font-size: 0.8125rem;
-  }
-}
-
 /* 添加空状态样式 */
 #line-switch-dropdown .empty-state {
   padding: 12px;
@@ -1340,32 +1140,6 @@ media-player:focus-within #custom-right-controls {
   z-index: 10000;
   margin-bottom: 8px;
   backdrop-filter: blur(20px);
-}
-
-/* 移动端防止设置菜单溢出 */
-@media (max-width: 768px) {
-  #play-settings-dropdown {
-    width: clamp(160px, 80vw, 200px);
-    padding: 14px;
-    /* 防止溢出到屏幕右侧 */
-    left: auto;
-    right: 0;
-    transform: translateX(0);
-  }
-
-  /* 如果按钮靠近右边缘，调整下拉菜单位置 */
-  .play-settings-container:last-child #play-settings-dropdown,
-  .play-settings-container:nth-last-child(-n+2) #play-settings-dropdown {
-    right: 0;
-    left: auto;
-  }
-
-  /* 如果按钮靠近左边缘，调整下拉菜单位置 */
-  .play-settings-container:first-child #play-settings-dropdown,
-  .play-settings-container:nth-child(-n+2) #play-settings-dropdown {
-    left: 0;
-    right: auto;
-  }
 }
 
 /* 播放速率选择框样式 */
@@ -1409,18 +1183,6 @@ media-player:focus-within #custom-right-controls {
   font-weight: 500;
 }
 
-/* 响应式调整 */
-@media (max-width: 768px) {
-  #play-settings-dropdown {
-    width: clamp(160px, 80vw, 200px);
-    padding: 14px;
-  }
-
-  #play-settings-dropdown span {
-    font-size: 0.8125rem;
-  }
-}
-
 /* 顶部导航栏 */
 header {
   display: flex;
@@ -1452,11 +1214,8 @@ header {
   #player-region {
     width: 100%;
     height: auto !important;
-    /* 保持 auto */
     aspect-ratio: 16/9;
-    /* 一开始就按 16:9 算高 */
     background-color: transparent;
-    /* 去掉黑底 */
   }
 
   /* video 同步自适应 */
@@ -1466,6 +1225,85 @@ header {
     height: 100% !important;
     object-fit: contain !important;
   }
+
+  .progress-restore-card {
+    padding: 2rem 1.5rem;
+    min-width: 0;
+    max-width: 95vw;
+    margin: 1rem;
+  }
+
+  .progress-modal-title {
+    font-size: 1.2rem;
+  }
+
+  .progress-modal-content {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .progress-modal-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .progress-modal-btn {
+    width: 100%;
+    padding: 0.875rem 1rem;
+  }
+
+  /* 移动端防止溢出 */
+  #line-switch-dropdown,
+  #skip-control-dropdown,
+  #play-settings-dropdown {
+    width: clamp(160px, 80vw, 200px);
+    padding: 10px;
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+  }
+
+  /* 如果按钮靠近右边缘，调整下拉菜单位置 */
+  .line-switch-container:last-child #line-switch-dropdown,
+  .line-switch-container:nth-last-child(-n+2) #line-switch-dropdown,
+  .play-settings-container:last-child #play-settings-dropdown,
+  .play-settings-container:nth-last-child(-n+2) #play-settings-dropdown {
+    right: 0;
+    left: auto;
+  }
+
+  /* 如果按钮靠近左边缘，调整下拉菜单位置 */
+  .line-switch-container:first-child #line-switch-dropdown,
+  .line-switch-container:nth-child(-n+2) #line-switch-dropdown,
+  .play-settings-container:first-child #play-settings-dropdown,
+  .play-settings-container:nth-child(-n+2) #play-settings-dropdown {
+    left: 0;
+    right: auto;
+  }
+
+  #skip-control-dropdown label {
+    font-size: 0.8125rem;
+    min-width: 55px;
+  }
+
+  #skip-control-dropdown input[type="number"] {
+    padding: 7px 10px;
+    font-size: 0.8125rem;
+  }
+
+  #skip-control-dropdown button,
+  #line-switch-dropdown button {
+    padding: 8px 10px;
+    font-size: 0.8125rem;
+  }
+
+  #play-settings-dropdown {
+    padding: 14px;
+  }
+
+  #play-settings-dropdown span {
+    font-size: 0.8125rem;
+  }
 }
 
 /* 全屏播放器操作提示 */
@@ -1474,7 +1312,6 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* 确保z-index足够高，高于播放器所有UI */
   z-index: 2147483647;
   pointer-events: none;
   background: rgba(0, 0, 0, 0.7);
@@ -1519,15 +1356,12 @@ header {
 }
 
 /* 2. Reposition the button to be on the left of the native fullscreen button */
-/* We use flexbox's 'order' property for this. */
 #web-fullscreen-control-btn {
   order: 1;
-  /* Lower order number comes first */
 }
 
 media-fullscreen-button {
   order: 2;
-  /* Higher order number comes second */
 }
 
 /* ==================== 播放页搜索和历史面板样式 ==================== */
@@ -1535,22 +1369,17 @@ media-fullscreen-button {
 /* 搜索弹窗新布局样式 */
 #searchPanel .bg-black\/20 {
   padding: 1.5rem !important;
-  /* 减小整体内边距 */
 }
 
 /* 搜索历史标签样式精致化 */
 #recentSearches {
   gap: 0.5rem !important;
-  /* 减小标签间距 */
 }
 
 #recentSearches .search-tag {
   padding: 0.25rem 0.5rem !important;
-  /* 进一步减小内边距 */
   font-size: 0.8125rem !important;
-  /* 减小字体大小 */
   border-radius: 0.375rem !important;
-  /* 调整圆角 */
   background: rgba(255, 255, 255, 0.08) !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
   color: rgba(255, 255, 255, 0.85) !important;
@@ -1577,8 +1406,6 @@ media-fullscreen-button {
   background: rgba(255, 255, 255, 0.1);
 }
 
-
-
 /* 播放页搜索结果画质标签样式 */
 .quality-tag {
   display: inline-block;
@@ -1595,52 +1422,6 @@ media-fullscreen-button {
 .quality-tag:hover {
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* 响应式优化 */
-@media (max-width: 768px) {
-  #searchPanel .bg-black\/20 {
-    padding: 1rem !important;
-    /* 移动端减小内边距 */
-  }
-
-  /* 移动端搜索框高度调整 */
-  #searchPanel .h-14 {
-    height: 3rem !important;
-    /* 减小搜索框高度 */
-  }
-
-  #recentSearches .search-tag {
-    padding: 0.1875rem 0.375rem !important;
-    font-size: 0.75rem !important;
-  }
-
-  .quality-tag {
-    font-size: 0.6875rem;
-    padding: 0.1875rem 0.375rem;
-  }
-}
-
-@media (max-width: 480px) {
-  #searchPanel .bg-black\/20 {
-    padding: 0.75rem !important;
-    margin: 0.5rem !important;
-  }
-
-  #searchPanel .h-14 {
-    height: 2.75rem !important;
-  }
-
-  #searchInput {
-    font-size: 1rem !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-
-  #recentSearches .search-tag {
-    padding: 0.125rem 0.25rem !important;
-    font-size: 0.6875rem !important;
-  }
 }
 
 /* 历史面板样式 */
@@ -1793,7 +1574,9 @@ media-fullscreen-button {
 }
 
 /* 加载动画 */
-.loading-spinner {
+/* 搜索加载动画 */
+
+.search-loading-spinner {
   width: 40px;
   height: 40px;
   border: 3px solid rgba(255, 255, 255, 0.3);
@@ -1810,12 +1593,6 @@ media-fullscreen-button {
 /* 确保Toast在最上层 */
 #toast {
   z-index: 10004 !important;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 /* 渐变文字效果 */
@@ -1851,25 +1628,6 @@ media-fullscreen-button {
   hyphens: auto;
   font-weight: 500;
   color: #ffffff;
-}
-
-/* 搜索结果卡片优化：横向布局 */
-.search-card-img-container {
-  width: 100px;
-  height: 150px;
-  overflow: hidden;
-  background-color: #191919;
-}
-
-/* 确保图片不会被拉伸，并且能够正确显示 */
-.search-card-img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* 增加卡片内字体大小 */
-.card-hover h3 {
   font-size: 0.95rem;
   line-height: 1.3rem;
   margin-bottom: 0.5rem;
@@ -1893,6 +1651,21 @@ media-fullscreen-button {
 .card-hover .result-meta {
   min-height: 1.5em;
   margin-bottom: 0.375rem;
+}
+
+/* 搜索结果卡片优化：横向布局 */
+.search-card-img-container {
+  width: 100px;
+  height: 150px;
+  overflow: hidden;
+  background-color: #191919;
+}
+
+/* 确保图片不会被拉伸，并且能够正确显示 */
+.search-card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* 卡片内集数/备注样式 */
@@ -1938,30 +1711,26 @@ media-fullscreen-button {
   #searchResults #results {
     grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
   }
-}
 
-/* 响应式调整：在小屏幕上依然保持较好的视觉效果 */
-@media (min-width: 641px) and (max-width: 768px) {
-  #searchResults #results {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  #searchPanel .bg-black\/20 {
+    padding: 1rem !important;
   }
-}
 
-/* 调整网格布局，减少每行卡片数量以适应更大尺寸的卡片 */
-@media (min-width: 769px) and (max-width: 1024px) {
-  #searchResults #results {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  /* 移动端搜索框高度调整 */
+  #searchPanel .h-14 {
+    height: 3rem !important;
   }
-}
 
-@media (min-width: 1025px) {
-  #searchResults #results {
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  #recentSearches .search-tag {
+    padding: 0.1875rem 0.375rem !important;
+    font-size: 0.75rem !important;
   }
-}
 
-/* 响应式调整 */
-@media (max-width: 768px) {
+  .quality-tag {
+    font-size: 0.6875rem;
+    padding: 0.1875rem 0.375rem;
+  }
+
   .history-panel {
     width: 320px;
   }
@@ -1985,7 +1754,47 @@ media-fullscreen-button {
   }
 }
 
+/* 响应式调整：在小屏幕上依然保持较好的视觉效果 */
+@media (min-width: 641px) and (max-width: 768px) {
+  #searchResults #results {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* 调整网格布局，减少每行卡片数量以适应更大尺寸的卡片 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #searchResults #results {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  #searchResults #results {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
 @media (max-width: 480px) {
+  #searchPanel .bg-black\/20 {
+    padding: 0.75rem !important;
+    margin: 0.5rem !important;
+  }
+
+  #searchPanel .h-14 {
+    height: 2.75rem !important;
+  }
+
+  #searchInput {
+    font-size: 1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  #recentSearches .search-tag {
+    padding: 0.125rem 0.25rem !important;
+    font-size: 0.6875rem !important;
+  }
+
   .history-panel {
     width: 280px;
   }
