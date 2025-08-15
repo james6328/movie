@@ -755,11 +755,11 @@ body {
 
 /* 日间模式下的半透明背景调整 */
 :root[data-theme="light"] .bg-opacity-20.bg-blue-500 {
-  background-color: rgba(72, 187, 120, 0.15) !important;
+  background-color: rgba(59, 130, 246, 0.15) !important;
 }
 
 :root[data-theme="light"] .bg-opacity-20.bg-purple-500 {
-  background-color: rgba(72, 187, 120, 0.15) !important;
+  background-color: rgba(139, 92, 246, 0.15) !important;
 }
 
 :root[data-theme="light"] .bg-opacity-20.bg-green-500 {
@@ -779,8 +779,8 @@ body {
   border: 1px solid var(--primary-color) !important;
 }
 
-/* 通用搜索结果卡片标签样式 - 根据内容自动区分 */
-:root[data-theme="light"] .card-hover span[class*="bg-green"]:not([class*="bg-green-500"]):not([class*="bg-green-600"]) {
+/* 通用搜索结果卡片标签样式 - 根据内容自动区分，但排除画质标签 */
+:root[data-theme="light"] .card-hover span[class*="bg-green"]:not([class*="bg-green-500"]):not([class*="bg-green-600"]):not(.quality-tag) {
   background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
   color: #0369a1 !important;
   border: 1px solid rgba(3, 105, 161, 0.2) !important;
@@ -803,53 +803,83 @@ body {
   border: 1px solid rgba(3, 105, 161, 0.2) !important;
 }
 
-/* 强制覆盖所有可能的绿色背景标签为蓝色（年份） */
-:root[data-theme="light"] .card-hover span[class*="bg-green-200"],
-:root[data-theme="light"] .card-hover span[class*="bg-emerald-200"],
-:root[data-theme="light"] .card-hover span[class*="bg-teal-200"] {
+/* 强制覆盖所有可能的绿色背景标签为蓝色（年份），但排除画质标签 */
+:root[data-theme="light"] .card-hover span[class*="bg-green-200"]:not(.quality-tag),
+:root[data-theme="light"] .card-hover span[class*="bg-emerald-200"]:not(.quality-tag),
+:root[data-theme="light"] .card-hover span[class*="bg-teal-200"]:not(.quality-tag) {
   background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
   color: #0369a1 !important;
   border: 1px solid rgba(3, 105, 161, 0.2) !important;
 }
 
+/* 画质标签保持原始颜色 - 不被覆盖 */
+:root[data-theme="light"] .quality-tag,
+:root[data-theme="light"] span.quality-tag,
+:root[data-theme="light"] .quality-tag.bg-purple-500,
+:root[data-theme="light"] .quality-tag.bg-blue-500,
+:root[data-theme="light"] .quality-tag.bg-green-500,
+:root[data-theme="light"] .quality-tag.bg-red-500,
+:root[data-theme="light"] .quality-tag.bg-yellow-500,
+:root[data-theme="light"] .quality-tag.bg-orange-500,
+:root[data-theme="light"] .quality-tag[class*="bg-purple"],
+:root[data-theme="light"] .quality-tag[class*="bg-blue"],
+:root[data-theme="light"] .quality-tag[class*="bg-green"],
+:root[data-theme="light"] .quality-tag[class*="bg-red"],
+:root[data-theme="light"] .quality-tag[class*="bg-yellow"],
+:root[data-theme="light"] .quality-tag[class*="bg-orange"] {
+  background: revert !important;
+  color: revert !important;
+  border-color: revert !important;
+}
+
+/* 画质标签悬停状态也保持原始样式 */
+:root[data-theme="light"] .quality-tag:hover,
+:root[data-theme="light"] span.quality-tag:hover {
+  background: revert !important;
+  color: revert !important;
+  border-color: revert !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
 /* 自定义API添加按钮和其他紫色按钮修复 */
-:root[data-theme="light"] button[style*="purple"],
-:root[data-theme="light"] button[style*="#8b5cf6"],
-:root[data-theme="light"] button[style*="#a855f7"],
-:root[data-theme="light"] button[style*="#9333ea"],
-:root[data-theme="light"] button[style*="#6366f1"],
-:root[data-theme="light"] .bg-purple-500,
-:root[data-theme="light"] .bg-purple-600,
-:root[data-theme="light"] .bg-violet-500,
-:root[data-theme="light"] .bg-violet-600,
-:root[data-theme="light"] .bg-indigo-500,
-:root[data-theme="light"] .bg-indigo-600,
-:root[data-theme="light"] [class*="bg-purple"],
-:root[data-theme="light"] [class*="bg-violet"],
-:root[data-theme="light"] [class*="bg-indigo"],
-:root[data-theme="light"] button.rounded-full,
-:root[data-theme="light"] .settings-panel button:not([onclick*="selectAllAPIs"]) {
+:root[data-theme="light"] button[style*="purple"]:not(.quality-tag),
+:root[data-theme="light"] button[style*="#8b5cf6"]:not(.quality-tag),
+:root[data-theme="light"] button[style*="#a855f7"]:not(.quality-tag),
+:root[data-theme="light"] button[style*="#9333ea"]:not(.quality-tag),
+:root[data-theme="light"] button[style*="#6366f1"]:not(.quality-tag),
+:root[data-theme="light"] .bg-purple-500:not(.quality-tag),
+:root[data-theme="light"] .bg-purple-600:not(.quality-tag),
+:root[data-theme="light"] .bg-violet-500:not(.quality-tag),
+:root[data-theme="light"] .bg-violet-600:not(.quality-tag),
+:root[data-theme="light"] .bg-indigo-500:not(.quality-tag),
+:root[data-theme="light"] .bg-indigo-600:not(.quality-tag),
+:root[data-theme="light"] [class*="bg-purple"]:not(.quality-tag),
+:root[data-theme="light"] [class*="bg-violet"]:not(.quality-tag),
+:root[data-theme="light"] [class*="bg-indigo"]:not(.quality-tag),
+:root[data-theme="light"] button.rounded-full:not(.quality-tag),
+:root[data-theme="light"] .settings-panel button:not([onclick*="selectAllAPIs"]):not(.quality-tag) {
   background: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
   color: white !important;
 }
 
-:root[data-theme="light"] button[style*="purple"]:hover,
-:root[data-theme="light"] button[style*="#8b5cf6"]:hover,
-:root[data-theme="light"] button[style*="#a855f7"]:hover,
-:root[data-theme="light"] button[style*="#9333ea"]:hover,
-:root[data-theme="light"] button[style*="#6366f1"]:hover,
-:root[data-theme="light"] .bg-purple-500:hover,
-:root[data-theme="light"] .bg-purple-600:hover,
-:root[data-theme="light"] .bg-violet-500:hover,
-:root[data-theme="light"] .bg-violet-600:hover,
-:root[data-theme="light"] .bg-indigo-500:hover,
-:root[data-theme="light"] .bg-indigo-600:hover,
-:root[data-theme="light"] [class*="bg-purple"]:hover,
-:root[data-theme="light"] [class*="bg-violet"]:hover,
-:root[data-theme="light"] [class*="bg-indigo"]:hover,
-:root[data-theme="light"] button.rounded-full:hover,
-:root[data-theme="light"] .settings-panel button:not([onclick*="selectAllAPIs"]):hover {
+:root[data-theme="light"] button[style*="purple"]:hover:not(.quality-tag),
+:root[data-theme="light"] button[style*="#8b5cf6"]:hover:not(.quality-tag),
+:root[data-theme="light"] button[style*="#a855f7"]:hover:not(.quality-tag),
+:root[data-theme="light"] button[style*="#9333ea"]:hover:not(.quality-tag),
+:root[data-theme="light"] button[style*="#6366f1"]:hover:not(.quality-tag),
+:root[data-theme="light"] .bg-purple-500:hover:not(.quality-tag),
+:root[data-theme="light"] .bg-purple-600:hover:not(.quality-tag),
+:root[data-theme="light"] .bg-violet-500:hover:not(.quality-tag),
+:root[data-theme="light"] .bg-violet-600:hover:not(.quality-tag),
+:root[data-theme="light"] .bg-indigo-500:hover:not(.quality-tag),
+:root[data-theme="light"] .bg-indigo-600:hover:not(.quality-tag),
+:root[data-theme="light"] [class*="bg-purple"]:hover:not(.quality-tag),
+:root[data-theme="light"] [class*="bg-violet"]:hover:not(.quality-tag),
+:root[data-theme="light"] [class*="bg-indigo"]:hover:not(.quality-tag),
+:root[data-theme="light"] button.rounded-full:hover:not(.quality-tag),
+:root[data-theme="light"] .settings-panel button:not([onclick*="selectAllAPIs"]):hover:not(.quality-tag) {
   background: var(--primary-light) !important;
   border-color: var(--primary-light) !important;
   color: white !important;

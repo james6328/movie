@@ -2148,11 +2148,11 @@ header {
 
 /* 日间模式下的半透明背景调整 */
 :root[data-theme="light"] .bg-opacity-20.bg-blue-500 {
-  background-color: rgba(72, 187, 120, 0.15) !important;
+  background-color: rgba(59, 130, 246, 0.15) !important;
 }
 
 :root[data-theme="light"] .bg-opacity-20.bg-purple-500 {
-  background-color: rgba(72, 187, 120, 0.15) !important;
+  background-color: rgba(139, 92, 246, 0.15) !important;
 }
 
 :root[data-theme="light"] .bg-opacity-20.bg-green-500 {
@@ -2258,6 +2258,36 @@ media-fullscreen-button {
 .quality-tag:hover {
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 日间模式下画质标签保持原始颜色 - 不被覆盖 */
+:root[data-theme="light"] .quality-tag,
+:root[data-theme="light"] span.quality-tag,
+:root[data-theme="light"] .quality-tag.bg-purple-500,
+:root[data-theme="light"] .quality-tag.bg-blue-500,
+:root[data-theme="light"] .quality-tag.bg-green-500,
+:root[data-theme="light"] .quality-tag.bg-red-500,
+:root[data-theme="light"] .quality-tag.bg-yellow-500,
+:root[data-theme="light"] .quality-tag.bg-orange-500,
+:root[data-theme="light"] .quality-tag[class*="bg-purple"],
+:root[data-theme="light"] .quality-tag[class*="bg-blue"],
+:root[data-theme="light"] .quality-tag[class*="bg-green"],
+:root[data-theme="light"] .quality-tag[class*="bg-red"],
+:root[data-theme="light"] .quality-tag[class*="bg-yellow"],
+:root[data-theme="light"] .quality-tag[class*="bg-orange"] {
+  background: revert !important;
+  color: revert !important;
+  border-color: revert !important;
+}
+
+/* 画质标签悬停状态也保持原始样式 */
+:root[data-theme="light"] .quality-tag:hover,
+:root[data-theme="light"] span.quality-tag:hover {
+  background: revert !important;
+  color: revert !important;
+  border-color: revert !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* 历史面板样式 */
