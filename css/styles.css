@@ -1,13 +1,13 @@
 /* -------- 1. 全局 CSS 变量（现代简约风格） -------- */
 :root {
-  --primary-color: #6366f1;
-  /* 现代紫色 */
-  --primary-light: #a5b4fc;
-  /* 浅紫色 */
+  --primary-color: #48bb78;
+  /* 现代绿色 */
+  --primary-light: #38a169;
+  /* 深绿色 */
   --secondary-color: #0f0f23;
   /* 深蓝黑 */
-  --accent-color: #8b5cf6;
-  /* 优雅紫色 */
+  --accent-color: #68d391;
+  /* 优雅绿色 */
   --text-color: #f8fafc;
   /* 纯净白 */
   --text-muted: #94a3b8;
@@ -34,14 +34,14 @@
 
 /* -------- 日间模式变量 - 优雅配色方案 -------- */
 :root[data-theme="light"] {
-  --primary-color: #667eea;
-  /* 优雅的蓝紫色 */
-  --primary-light: #764ba2;
-  /* 深紫色 */
+  --primary-color: #48bb78;
+  /* 优雅的浅绿色 */
+  --primary-light: #38a169;
+  /* 深绿色 */
   --secondary-color: #f8fafc;
   /* 浅色背景 */
-  --accent-color: #f093fb;
-  /* 粉紫渐变色 */
+  --accent-color: #68d391;
+  /* 亮绿色 */
   --text-color: #2d3748;
   /* 温和的深色文字 */
   --text-muted: #718096;
@@ -56,23 +56,23 @@
   /* 纯白卡片 */
   --card-gradient-end: #f7fafc;
   /* 极浅蓝灰 */
-  --card-accent: rgba(102, 126, 234, 0.08);
-  /* 淡蓝紫色 */
-  --card-hover-border: rgba(102, 126, 234, 0.4);
+  --card-accent: rgba(72, 187, 120, 0.08);
+  /* 淡绿色 */
+  --card-hover-border: rgba(72, 187, 120, 0.4);
   /* 悬停边框 */
   --surface-color: #ffffff;
   /* 白色表面 */
   --surface-hover: #f1f5f9;
   /* 浅灰悬停 */
 
-  /* 新增优雅配色 */
-  --button-gradient-start: #667eea;
-  --button-gradient-end: #764ba2;
-  --button-shadow: rgba(102, 126, 234, 0.25);
+  /* 新增浅绿色配色 */
+  --button-gradient-start: #48bb78;
+  --button-gradient-end: #38a169;
+  --button-shadow: rgba(72, 187, 120, 0.25);
   --card-shadow: rgba(0, 0, 0, 0.08);
   --panel-shadow: rgba(0, 0, 0, 0.12);
-  --elegant-purple: #8b5a9f;
-  --soft-blue: #74b9ff;
+  --elegant-green: #2f855a;
+  --soft-green: #68d391;
   --warm-gray: #636e72;
 }
 
@@ -283,7 +283,7 @@ body {
 }
 
 :root[data-theme="light"] .settings-panel button[onclick="selectAllAPIs(true)"]:hover {
-  background: linear-gradient(135deg, var(--primary-light) 0%, var(--elegant-purple) 100%) !important;
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--elegant-green) 100%) !important;
   box-shadow: 0 4px 16px var(--button-shadow) !important;
   transform: translateY(-1px) !important;
 }
@@ -370,7 +370,7 @@ body {
 }
 
 :root[data-theme="light"] .history-panel .progress-filled {
-  background: linear-gradient(to right, var(--primary-color), var(--soft-blue)) !important;
+  background: linear-gradient(to right, var(--primary-color), var(--soft-green)) !important;
 }
 
 :root[data-theme="light"] .history-panel .progress-text {
@@ -574,7 +574,7 @@ body {
 }
 
 :root[data-theme="light"] #toast.bg-blue-500 {
-  background: #3b82f6 !important;
+  background: var(--primary-color) !important;
   color: white !important;
 }
 
@@ -710,7 +710,7 @@ body {
 /* 日间模式下的彩色文字调整 */
 :root[data-theme="light"] .text-blue-300,
 :root[data-theme="light"] .text-blue-400 {
-  color: #3b82f6 !important;
+  color: var(--primary-color) !important;
 }
 
 :root[data-theme="light"] .text-green-300 {
@@ -719,7 +719,7 @@ body {
 
 :root[data-theme="light"] .text-purple-300,
 :root[data-theme="light"] .text-purple-400 {
-  color: #8b5cf6 !important;
+  color: var(--primary-color) !important;
 }
 
 :root[data-theme="light"] .text-red-400 {
@@ -755,11 +755,11 @@ body {
 
 /* 日间模式下的半透明背景调整 */
 :root[data-theme="light"] .bg-opacity-20.bg-blue-500 {
-  background-color: rgba(59, 130, 246, 0.15) !important;
+  background-color: rgba(72, 187, 120, 0.15) !important;
 }
 
 :root[data-theme="light"] .bg-opacity-20.bg-purple-500 {
-  background-color: rgba(139, 92, 246, 0.15) !important;
+  background-color: rgba(72, 187, 120, 0.15) !important;
 }
 
 :root[data-theme="light"] .bg-opacity-20.bg-green-500 {
@@ -793,7 +793,7 @@ button,
 
 /* 选中状态的样式 */
 input[type="checkbox"]:checked+.toggle-bg {
-  background-color: #6366f1 !important;
+  background-color: var(--primary-color) !important;
   /* 使用主色调 */
 }
 
@@ -1272,7 +1272,7 @@ body {
 }
 
 .history-episode {
-  color: #3b82f6;
+  color: var(--primary-color);
 }
 
 .history-source {
@@ -1322,7 +1322,7 @@ body {
 
 .progress-filled {
   height: 100%;
-  background: linear-gradient(to right, #00ccff, #3b82f6);
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
   border-radius: 2px;
 }
 
@@ -1742,8 +1742,8 @@ body {
 
 /* 全局激活按钮的样式 (对所有类型节目都有效) */
 .episode-active {
-  background: #3b82f6 !important;
-  border-color: #60a5fa !important;
+  background: var(--primary-color) !important;
+  border-color: var(--primary-light) !important;
   color: #fff !important;
   font-weight: bold;
 }

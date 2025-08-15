@@ -8,10 +8,10 @@
 
 /* 日间模式变量 - 优雅配色方案 */
 :root[data-theme="light"] {
-  --primary-color: #667eea;  /* 优雅的蓝紫色 */
-  --primary-light: #764ba2;  /* 深紫色 */
+  --primary-color: #48bb78;  /* 优雅的浅绿色 */
+  --primary-light: #38a169;  /* 深绿色 */
   --secondary-color: #f8fafc;  /* 浅色背景 */
-  --accent-color: #f093fb;  /* 粉紫渐变色 */
+  --accent-color: #68d391;  /* 亮绿色 */
   --text-color: #2d3748;  /* 温和的深色文字 */
   --text-muted: #718096;  /* 优雅的灰色 */
   --border-color: rgba(203, 213, 225, 0.6);  /* 柔和边框 */
@@ -25,13 +25,13 @@
   --surface-hover: #f1f5f9;  /* 浅灰悬停 */
   
   /* 新增优雅配色 */
-  --button-gradient-start: #667eea;
-  --button-gradient-end: #764ba2;
+  --button-gradient-start: #48bb78;
+  --button-gradient-end: #38a169;
   --button-shadow: rgba(102, 126, 234, 0.25);
   --card-shadow: rgba(0, 0, 0, 0.08);
   --panel-shadow: rgba(0, 0, 0, 0.12);
-  --elegant-purple: #8b5a9f;
-  --soft-blue: #74b9ff;
+  --elegant-green: #2f855a;
+  --soft-green: #68d391;
   --warm-gray: #636e72;
 }
 
@@ -319,7 +319,7 @@ media-player:focus-within #custom-right-controls {
 .web-fullscreen-active #web-fullscreen-control-btn {
   background: rgba(59, 130, 246, 0.3);
   border-color: rgba(59, 130, 246, 0.5);
-  color: #60a5fa;
+  color: var(--primary-color);
 }
 
 .web-fullscreen-active #web-fullscreen-control-btn:hover {
@@ -1519,7 +1519,7 @@ header {
 }
 
 :root[data-theme="light"] .history-panel .progress-filled {
-  background: linear-gradient(to right, var(--primary-color), var(--soft-blue)) !important;
+  background: linear-gradient(to right, var(--primary-color), var(--soft-green)) !important;
 }
 
 :root[data-theme="light"] .history-panel .progress-text {
@@ -1872,7 +1872,7 @@ header {
 }
 
 :root[data-theme="light"] #toast.bg-blue-500 {
-  background: #3b82f6 !important;
+  background: var(--primary-color) !important;
   color: white !important;
 }
 
@@ -2108,7 +2108,7 @@ header {
 /* 日间模式下的彩色文字调整 */
 :root[data-theme="light"] .text-blue-300,
 :root[data-theme="light"] .text-blue-400 {
-  color: #3b82f6 !important;
+  color: var(--primary-color) !important;
 }
 
 :root[data-theme="light"] .text-green-300 {
@@ -2116,7 +2116,7 @@ header {
 }
 
 :root[data-theme="light"] .text-purple-300 {
-  color: #8b5cf6 !important;
+  color: var(--primary-color) !important;
 }
 
 /* 播放页搜索结果加载状态的日间模式样式 */
@@ -2148,11 +2148,11 @@ header {
 
 /* 日间模式下的半透明背景调整 */
 :root[data-theme="light"] .bg-opacity-20.bg-blue-500 {
-  background-color: rgba(59, 130, 246, 0.15) !important;
+  background-color: rgba(72, 187, 120, 0.15) !important;
 }
 
 :root[data-theme="light"] .bg-opacity-20.bg-purple-500 {
-  background-color: rgba(139, 92, 246, 0.15) !important;
+  background-color: rgba(72, 187, 120, 0.15) !important;
 }
 
 :root[data-theme="light"] .bg-opacity-20.bg-green-500 {
@@ -2338,7 +2338,7 @@ media-fullscreen-button {
 
 .progress-filled {
   height: 100%;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
   border-radius: 2px;
   transition: width 0.3s ease;
 }
@@ -2433,7 +2433,7 @@ media-fullscreen-button {
 
 /* 渐变文字效果 */
 .gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
