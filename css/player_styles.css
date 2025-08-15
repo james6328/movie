@@ -1438,7 +1438,7 @@ header {
   background-color: rgba(0, 0, 0, 0.15) !important;
 }
 
-/* 日间模式下的面板样式 - 优雅设计 */
+/* 播放页历史面板容器样式 - 与首页完全一致 */
 :root[data-theme="light"] .history-panel {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%) !important;
   border: 1px solid rgba(203, 213, 225, 0.6) !important;
@@ -1446,7 +1446,7 @@ header {
   backdrop-filter: blur(20px) !important;
 }
 
-/* 播放页历史面板标题和文字 - 增强对比度 */
+/* 播放页历史面板样式 - 与首页完全一致 */
 :root[data-theme="light"] .history-panel .gradient-text {
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   -webkit-background-clip: text;
@@ -1467,7 +1467,7 @@ header {
   color: #4a5568 !important;
 }
 
-/* 历史项中的具体文字元素 */
+/* 播放页历史项中的具体文字元素 - 与首页完全一致 */
 :root[data-theme="light"] .history-panel .history-title {
   color: #2d3748 !important;
   font-weight: 600 !important;
@@ -1491,7 +1491,7 @@ header {
   color: #4a5568 !important;
 }
 
-/* 播放页清空历史按钮 - 优雅设计 */
+/* 播放页清空历史按钮 - 与首页完全一致 */
 :root[data-theme="light"] .history-panel .clear-history-btn {
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
   border: 1px solid rgba(239, 68, 68, 0.3) !important;
@@ -1506,6 +1506,47 @@ header {
   border-color: #dc2626 !important;
   box-shadow: 0 4px 16px rgba(239, 68, 68, 0.2) !important;
   transform: translateY(-1px) !important;
+}
+
+/* 播放页历史项进度条样式 - 与首页完全一致 */
+:root[data-theme="light"] .history-panel .progress-bar {
+  background-color: rgba(203, 213, 225, 0.3) !important;
+}
+
+:root[data-theme="light"] .history-panel .progress-filled {
+  background: linear-gradient(to right, var(--primary-color), var(--soft-blue)) !important;
+}
+
+:root[data-theme="light"] .history-panel .progress-text {
+  color: var(--text-muted) !important;
+}
+
+/* 播放页历史项删除按钮样式 - 与首页完全一致 */
+:root[data-theme="light"] .history-item .history-item-delete-btn {
+  color: rgba(239, 68, 68, 0.7) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(239, 68, 68, 0.2) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] .history-item .history-item-delete-btn:hover {
+  color: #dc2626 !important;
+  background: rgba(254, 242, 242, 0.95) !important;
+  border-color: #dc2626 !important;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2) !important;
+}
+
+@media (max-width: 768px) {
+  :root[data-theme="light"] .history-item .history-item-delete-btn {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+  }
+  
+  :root[data-theme="light"] .history-item .history-item-delete-btn:active {
+    background: rgba(254, 242, 242, 0.9) !important;
+    transform: scale(0.95) !important;
+  }
 }
 
 /* 日间模式下的搜索面板样式 */
@@ -1534,7 +1575,7 @@ header {
   color: rgba(30, 41, 59, 0.5) !important;
 }
 
-/* 日间模式下的历史项样式 - 优雅设计 */
+/* 播放页历史项样式 - 与首页完全一致 */
 :root[data-theme="light"] .history-item {
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
   border: 1px solid rgba(203, 213, 225, 0.5) !important;
