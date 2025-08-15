@@ -842,6 +842,76 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
 }
 
+/* 豆瓣热门标签样式 - 日间模式绿色主题 */
+:root[data-theme="light"] .category-btn,
+:root[data-theme="light"] .filter-btn,
+:root[data-theme="light"] button[class*="bg-pink"],
+:root[data-theme="light"] button[class*="bg-rose"],
+:root[data-theme="light"] .bg-pink-500,
+:root[data-theme="light"] .bg-rose-500,
+:root[data-theme="light"] .bg-red-400,
+:root[data-theme="light"] button[style*="pink"],
+:root[data-theme="light"] button[style*="rose"],
+:root[data-theme="light"] button[style*="#ec4899"],
+:root[data-theme="light"] button[style*="#f43f5e"] {
+  background: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* 豆瓣热门标签悬停状态 */
+:root[data-theme="light"] .category-btn:hover,
+:root[data-theme="light"] .filter-btn:hover,
+:root[data-theme="light"] button[class*="bg-pink"]:hover,
+:root[data-theme="light"] button[class*="bg-rose"]:hover,
+:root[data-theme="light"] .bg-pink-500:hover,
+:root[data-theme="light"] .bg-rose-500:hover,
+:root[data-theme="light"] .bg-red-400:hover,
+:root[data-theme="light"] button[style*="pink"]:hover,
+:root[data-theme="light"] button[style*="rose"]:hover,
+:root[data-theme="light"] button[style*="#ec4899"]:hover,
+:root[data-theme="light"] button[style*="#f43f5e"]:hover {
+  background: var(--primary-light) !important;
+  color: white !important;
+  border-color: var(--primary-light) !important;
+}
+
+/* 豆瓣热门标签激活状态 */
+:root[data-theme="light"] .category-btn.active,
+:root[data-theme="light"] .filter-btn.active,
+:root[data-theme="light"] button[class*="bg-pink"].active,
+:root[data-theme="light"] button[class*="bg-rose"].active {
+  background: var(--accent-color) !important;
+  color: white !important;
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.3) !important;
+}
+
+/* 通用分类标签按钮 - 基于位置和内容的通用规则 */
+:root[data-theme="light"] .flex button:not(.quality-tag):not([onclick*="selectAllAPIs"]),
+:root[data-theme="light"] .grid button:not(.quality-tag):not([onclick*="selectAllAPIs"]),
+:root[data-theme="light"] nav button:not(.quality-tag):not([onclick*="selectAllAPIs"]),
+:root[data-theme="light"] .category-container button:not(.quality-tag),
+:root[data-theme="light"] .filter-container button:not(.quality-tag) {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  color: var(--text-color) !important;
+  border: 1px solid rgba(203, 213, 225, 0.6) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* 通用分类标签按钮悬停状态 */
+:root[data-theme="light"] .flex button:not(.quality-tag):not([onclick*="selectAllAPIs"]):hover,
+:root[data-theme="light"] .grid button:not(.quality-tag):not([onclick*="selectAllAPIs"]):hover,
+:root[data-theme="light"] nav button:not(.quality-tag):not([onclick*="selectAllAPIs"]):hover,
+:root[data-theme="light"] .category-container button:not(.quality-tag):hover,
+:root[data-theme="light"] .filter-container button:not(.quality-tag):hover {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.2) !important;
+}
+
 /* 自定义API添加按钮和其他紫色按钮修复 */
 :root[data-theme="light"] button[style*="purple"]:not(.quality-tag),
 :root[data-theme="light"] button[style*="#8b5cf6"]:not(.quality-tag),
