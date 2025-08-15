@@ -1417,25 +1417,30 @@ header {
   color: var(--text-color);
 }
 
-/* 日间模式下的特殊背景调整 */
+/* 日间模式下的特殊背景调整 - 保持透明毛玻璃效果 */
 :root[data-theme="light"] .bg-black\/20 {
-  background-color: rgba(255, 255, 255, 0.9) !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(20px) !important;
 }
 
 :root[data-theme="light"] .bg-black\/80 {
-  background-color: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
 }
 
 :root[data-theme="light"] .bg-black\/40 {
-  background-color: rgba(255, 255, 255, 0.8) !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(16px) !important;
 }
 
 :root[data-theme="light"] .bg-black\/50 {
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(14px) !important;
 }
 
 :root[data-theme="light"] .bg-black\/70 {
-  background-color: rgba(0, 0, 0, 0.15) !important;
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  backdrop-filter: blur(14px) !important;
 }
 
 /* 播放页历史面板容器样式 - 与首页完全一致 */
@@ -1710,10 +1715,16 @@ header {
   background: rgba(220, 38, 38, 0.15) !important;
 }
 
-/* 播放器页面模态框样式 */
+/* 播放器页面模态框透明效果 */
+:root[data-theme="light"] #modal {
+  background: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
 :root[data-theme="light"] #modal > div {
-  background: rgba(255, 255, 255, 0.95) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(203, 213, 225, 0.3) !important;
+  backdrop-filter: blur(20px) !important;
 }
 
 :root[data-theme="light"] #modalTitle {
@@ -1721,19 +1732,27 @@ header {
 }
 
 :root[data-theme="light"] #modalContent {
-  background: rgba(0, 0, 0, 0.02) !important;
+  background: rgba(255, 255, 255, 0.3) !important;
   color: var(--text-color) !important;
+  backdrop-filter: blur(10px) !important;
 }
 
 :root[data-theme="light"] #modal button {
-  background: rgba(0, 0, 0, 0.05) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
   color: var(--text-color) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(203, 213, 225, 0.6) !important;
 }
 
 :root[data-theme="light"] #modal button:hover {
-  background: rgba(0, 0, 0, 0.1) !important;
-  border-color: rgba(0, 0, 0, 0.15) !important;
+  background: linear-gradient(135deg, var(--button-gradient-start) 0%, var(--button-gradient-end) 100%) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* 搜索面板透明效果 */
+:root[data-theme="light"] #searchPanel {
+  background: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
 }
 
 /* 进度恢复弹窗 */
@@ -1766,13 +1785,31 @@ header {
   border-color: rgba(0, 0, 0, 0.15) !important;
 }
 
-/* 加载提示 */
+/* 播放页加载提示 - 保持透明毛玻璃效果 */
+:root[data-theme="light"] #loading {
+  background: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
 :root[data-theme="light"] #loading .bg-black\/20 {
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(203, 213, 225, 0.3) !important;
 }
 
 :root[data-theme="light"] #loading .text-white {
   color: var(--text-color) !important;
+}
+
+/* 播放页加载动画样式 */
+:root[data-theme="light"] .loading-container {
+  background: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+:root[data-theme="light"] .loading-spinner {
+  border-color: rgba(203, 213, 225, 0.3) !important;
+  border-top-color: var(--primary-color) !important;
 }
 
 /* 下拉菜单样式优化 */
@@ -2080,6 +2117,33 @@ header {
 
 :root[data-theme="light"] .text-purple-300 {
   color: #8b5cf6 !important;
+}
+
+/* 播放页搜索结果加载状态的日间模式样式 */
+:root[data-theme="light"] .text-gray-400 {
+  color: var(--text-muted) !important;
+}
+
+/* 播放页Spinner加载动画样式 */
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 1s ease-in-out infinite;
+  margin: 0 auto;
+}
+
+:root[data-theme="light"] .spinner {
+  border-color: rgba(203, 213, 225, 0.4) !important;
+  border-top-color: var(--primary-color) !important;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* 日间模式下的半透明背景调整 */
