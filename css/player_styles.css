@@ -1434,9 +1434,50 @@ header {
   border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
+/* 播放页历史面板标题和文字 */
+:root[data-theme="light"] .history-panel .gradient-text {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+:root[data-theme="light"] .history-panel .text-center {
+  color: var(--text-muted) !important;
+}
+
+:root[data-theme="light"] .history-panel .text-lg {
+  color: var(--text-color) !important;
+}
+
+:root[data-theme="light"] .history-panel .text-sm {
+  color: var(--text-muted) !important;
+}
+
 /* 日间模式下的搜索面板样式 */
 :root[data-theme="light"] #searchPanel .bg-black\/20 {
   background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* 搜索面板整体背景调整 */
+:root[data-theme="light"] #searchPanel {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* 搜索面板内的输入框 */
+:root[data-theme="light"] #searchPanel input[type="text"] {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+:root[data-theme="light"] #searchPanel input[type="text"]:focus {
+  border-color: var(--primary-color) !important;
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+:root[data-theme="light"] #searchPanel input[type="text"]::placeholder {
+  color: rgba(30, 41, 59, 0.5) !important;
 }
 
 /* 日间模式下的历史项样式 */
@@ -1460,15 +1501,244 @@ header {
 
 /* 日间模式下的搜索标签样式 */
 :root[data-theme="light"] .search-tag {
-  background: rgba(0, 0, 0, 0.05) !important;
+  background: rgba(0, 0, 0, 0.08) !important;
   color: var(--text-color) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
 }
 
 :root[data-theme="light"] .search-tag:hover {
   background: rgba(99, 102, 241, 0.1) !important;
   color: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
+}
+
+/* 播放页搜索面板中的搜索历史标签特殊处理 */
+:root[data-theme="light"] #searchPanel .search-tag {
+  background: rgba(0, 0, 0, 0.1) !important;
+  color: #1e293b !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  font-weight: 500 !important;
+}
+
+:root[data-theme="light"] #searchPanel .search-tag:hover {
+  background: rgba(99, 102, 241, 0.15) !important;
+  color: #6366f1 !important;
+  border-color: #6366f1 !important;
+}
+
+/* 播放页搜索面板中的其他文字元素 */
+:root[data-theme="light"] #searchPanel .text-white\/70 {
+  color: rgba(30, 41, 59, 0.8) !important;
+}
+
+:root[data-theme="light"] #searchPanel .text-white\/50 {
+  color: rgba(30, 41, 59, 0.6) !important;
+}
+
+:root[data-theme="light"] #searchPanel .text-white\/80 {
+  color: rgba(30, 41, 59, 0.9) !important;
+}
+
+/* 搜索面板中的搜索结果区域 */
+:root[data-theme="light"] #searchPanel .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+/* 搜索面板中的按钮 */
+:root[data-theme="light"] #searchPanel button {
+  color: var(--text-color) !important;
+}
+
+:root[data-theme="light"] #searchPanel button:hover {
+  color: var(--text-color) !important;
+}
+
+/* 搜索面板中的关闭按钮 */
+:root[data-theme="light"] #closeSearchPanelButton {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: rgba(30, 41, 59, 0.7) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] #closeSearchPanelButton:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 搜索面板中的搜索按钮 */
+:root[data-theme="light"] #searchPanel form button[type="submit"] {
+  color: rgba(30, 41, 59, 0.7) !important;
+}
+
+:root[data-theme="light"] #searchPanel form button[type="submit"]:hover {
+  color: var(--text-color) !important;
+}
+
+/* 清除搜索历史按钮 */
+:root[data-theme="light"] #clearSearchHistory {
+  color: rgba(30, 41, 59, 0.6) !important;
+}
+
+:root[data-theme="light"] #clearSearchHistory:hover {
+  color: rgba(30, 41, 59, 0.9) !important;
+}
+
+/* 搜索标签删除按钮增强可见性 */
+:root[data-theme="light"] .search-tag + span[role="button"] {
+  color: rgba(30, 41, 59, 0.6) !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-radius: 50% !important;
+  padding: 2px !important;
+}
+
+:root[data-theme="light"] .search-tag + span[role="button"]:hover {
+  color: #dc2626 !important;
+  background: rgba(220, 38, 38, 0.1) !important;
+}
+
+:root[data-theme="light"] #searchPanel .search-tag + span[role="button"] {
+  color: rgba(30, 41, 59, 0.7) !important;
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+:root[data-theme="light"] #searchPanel .search-tag + span[role="button"]:hover {
+  color: #dc2626 !important;
+  background: rgba(220, 38, 38, 0.15) !important;
+}
+
+/* 播放器页面模态框样式 */
+:root[data-theme="light"] #modal > div {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] #modalTitle {
+  color: var(--text-color) !important;
+}
+
+:root[data-theme="light"] #modalContent {
+  background: rgba(0, 0, 0, 0.02) !important;
+  color: var(--text-color) !important;
+}
+
+:root[data-theme="light"] #modal button {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] #modal button:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 进度恢复弹窗 */
+:root[data-theme="light"] #progress-restore-modal {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+:root[data-theme="light"] .progress-restore-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: var(--text-color) !important;
+}
+
+:root[data-theme="light"] .progress-modal-title {
+  color: var(--text-color) !important;
+}
+
+:root[data-theme="light"] .progress-modal-content {
+  color: var(--text-muted) !important;
+}
+
+:root[data-theme="light"] .progress-modal-btn.confirm {
+  background: var(--primary-color) !important;
+  color: white !important;
+}
+
+:root[data-theme="light"] .progress-modal-btn.cancel {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 加载提示 */
+:root[data-theme="light"] #loading .bg-black\/20 {
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+:root[data-theme="light"] #loading .text-white {
+  color: var(--text-color) !important;
+}
+
+/* 下拉菜单样式优化 */
+:root[data-theme="light"] #play-settings-dropdown,
+:root[data-theme="light"] #line-switch-dropdown,
+:root[data-theme="light"] #skip-control-dropdown {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: var(--text-color) !important;
+}
+
+:root[data-theme="light"] #play-settings-dropdown span,
+:root[data-theme="light"] #line-switch-dropdown span,
+:root[data-theme="light"] #skip-control-dropdown span {
+  color: var(--text-color) !important;
+}
+
+:root[data-theme="light"] #play-settings-dropdown label,
+:root[data-theme="light"] #skip-control-dropdown label {
+  color: var(--text-color) !important;
+}
+
+:root[data-theme="light"] #play-settings-dropdown button,
+:root[data-theme="light"] #line-switch-dropdown button,
+:root[data-theme="light"] #skip-control-dropdown button {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] #play-settings-dropdown button:hover,
+:root[data-theme="light"] #line-switch-dropdown button:hover,
+:root[data-theme="light"] #skip-control-dropdown button:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+:root[data-theme="light"] #line-switch-dropdown button.line-active {
+  background: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* Toast消息样式 */
+:root[data-theme="light"] #toast {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Toast不同类型的背景色调整 */
+:root[data-theme="light"] #toast.bg-green-500 {
+  background: #16a34a !important;
+  color: white !important;
+}
+
+:root[data-theme="light"] #toast.bg-red-500 {
+  background: #dc2626 !important;
+  color: white !important;
+}
+
+:root[data-theme="light"] #toast.bg-blue-500 {
+  background: #3b82f6 !important;
+  color: white !important;
+}
+
+:root[data-theme="light"] #toast.bg-yellow-500 {
+  background: #eab308 !important;
+  color: white !important;
 }
 
 /* 日间模式下的按钮样式 */
@@ -1522,17 +1792,77 @@ header {
   border-color: rgba(0, 0, 0, 0.15) !important;
 }
 
-/* 日间模式下的剧集按钮样式 */
-:root[data-theme="light"] #episode-grid button:not(.episode-active) {
+/* 播放控制按钮 */
+:root[data-theme="light"] #prev-episode,
+:root[data-theme="light"] #next-episode {
   background: rgba(0, 0, 0, 0.05) !important;
   color: var(--text-color) !important;
   border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
-:root[data-theme="light"] #episode-grid button:not(.episode-active):hover {
+:root[data-theme="light"] #prev-episode:hover:not(:disabled),
+:root[data-theme="light"] #next-episode:hover:not(:disabled) {
   background: rgba(0, 0, 0, 0.1) !important;
   color: var(--text-color) !important;
   border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 集数信息 */
+:root[data-theme="light"] #episode-info-span {
+  background: rgba(0, 0, 0, 0.03) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 顶部导航按钮 */
+:root[data-theme="light"] #back-button,
+:root[data-theme="light"] #historyButton,
+:root[data-theme="light"] #searchButton,
+:root[data-theme="light"] #fullscreen-button,
+:root[data-theme="light"] #themeToggleButton {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] #back-button:hover,
+:root[data-theme="light"] #historyButton:hover,
+:root[data-theme="light"] #searchButton:hover,
+:root[data-theme="light"] #fullscreen-button:hover,
+:root[data-theme="light"] #themeToggleButton:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 日间模式下的剧集按钮样式 */
+:root[data-theme="light"] #episode-grid button:not(.episode-active) {
+  background: rgba(0, 0, 0, 0.03) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] #episode-grid button:not(.episode-active):hover {
+  background: rgba(0, 0, 0, 0.08) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 剧集容器背景 */
+:root[data-theme="light"] #episodes-container .bg-white\/5 {
+  background: rgba(0, 0, 0, 0.02) !important;
+}
+
+/* 综艺节目按钮样式 */
+:root[data-theme="light"] .variety-grid-layout .episode-btn {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] .variety-grid-layout .episode-btn:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-color: var(--primary-color) !important;
 }
 
 /* 日间模式下的硬编码背景色调整 */
