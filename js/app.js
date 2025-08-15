@@ -34,7 +34,10 @@ function refreshSpeedBadges(results) {
         if (badge && isValidSpeedValue(it.loadSpeed)) {
             badge.textContent = it.loadSpeed;
             badge.classList.remove('hidden');
-            badge.style.backgroundColor = '#16a34a';
+            // 根据主题设置颜色
+            const isLightTheme = document.documentElement.getAttribute('data-theme') === 'light';
+            badge.style.backgroundColor = isLightTheme ? '#16a34a' : '#16a34a';
+            badge.style.color = 'white';
         }
     });
 }
@@ -1588,7 +1591,10 @@ async function showVideoEpisodesModal(id, title, sourceCode, apiUrl, fallbackDat
     if (speedTagElement && videoData.loadSpeed && isValidSpeedValue(videoData.loadSpeed)) {
         speedTagElement.textContent = videoData.loadSpeed;
         speedTagElement.classList.remove('hidden');
-        speedTagElement.style.backgroundColor = '#16a34a';
+        // 根据主题设置颜色
+        const isLightTheme = document.documentElement.getAttribute('data-theme') === 'light';
+        speedTagElement.style.backgroundColor = isLightTheme ? '#16a34a' : '#16a34a';
+        speedTagElement.style.color = 'white';
     }
     const episodeButtonsGrid = modalContent.querySelector('[data-field="episode-buttons-grid"]');
     const varietyShowTypes = ['综艺', '脱口秀', '真人秀', '纪录片'];
@@ -1835,7 +1841,10 @@ async function manualRetryDetection(qualityId, videoData) {
             if (modalSpeedTag && testedResult.loadSpeed && isValidSpeedValue(testedResult.loadSpeed)) {
                 modalSpeedTag.textContent = testedResult.loadSpeed;
                 modalSpeedTag.classList.remove('hidden');
-                modalSpeedTag.style.backgroundColor = '#16a34a';
+                // 根据主题设置颜色
+                const isLightTheme = document.documentElement.getAttribute('data-theme') === 'light';
+                modalSpeedTag.style.backgroundColor = isLightTheme ? '#16a34a' : '#16a34a';
+                modalSpeedTag.style.color = 'white';
             }
         }
 

@@ -6,6 +6,25 @@
   background: var(--page-gradient-start);
 }
 
+/* 日间模式变量 */
+:root[data-theme="light"] {
+  --primary-color: #6366f1;
+  --primary-light: #8b5cf6;
+  --secondary-color: #f8fafc;
+  --accent-color: #8b5cf6;
+  --text-color: #1e293b;
+  --text-muted: #64748b;
+  --border-color: rgba(148, 163, 184, 0.2);
+  --page-gradient-start: #ffffff;
+  --page-gradient-end: #f1f5f9;
+  --card-gradient-start: #ffffff;
+  --card-gradient-end: #f8fafc;
+  --card-accent: rgba(99, 102, 241, 0.05);
+  --card-hover-border: rgba(99, 102, 241, 0.3);
+  --surface-color: #ffffff;
+  --surface-hover: #f1f5f9;
+}
+
 /* 播放器区域 */
 #player-region {
   width: 100%;
@@ -1321,6 +1340,260 @@ header {
   color: white;
   opacity: 0;
   transition: opacity .3s ease-in-out;
+}
+
+/* 日间模式下的文字颜色调整 */
+:root[data-theme="light"] .text-white {
+  color: var(--text-color) !important;
+}
+
+:root[data-theme="light"] .text-white\/90 {
+  color: rgba(30, 41, 59, 0.9) !important;
+}
+
+:root[data-theme="light"] .text-white\/80 {
+  color: rgba(30, 41, 59, 0.8) !important;
+}
+
+:root[data-theme="light"] .text-white\/70 {
+  color: rgba(30, 41, 59, 0.7) !important;
+}
+
+:root[data-theme="light"] .text-white\/60 {
+  color: rgba(30, 41, 59, 0.6) !important;
+}
+
+:root[data-theme="light"] .text-white\/50 {
+  color: rgba(30, 41, 59, 0.5) !important;
+}
+
+:root[data-theme="light"] .text-white\/40 {
+  color: rgba(30, 41, 59, 0.4) !important;
+}
+
+:root[data-theme="light"] .text-white\/30 {
+  color: rgba(30, 41, 59, 0.3) !important;
+}
+
+/* 日间模式下的背景调整 */
+:root[data-theme="light"] .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+:root[data-theme="light"] .bg-white\/20 {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+/* 日间模式下的边框调整 */
+:root[data-theme="light"] .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+:root[data-theme="light"] .border-white\/40 {
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 日间模式下的播放器背景调整 */
+:root[data-theme="light"] body {
+  background: var(--page-gradient-start);
+  color: var(--text-color);
+}
+
+/* 日间模式下的特殊背景调整 */
+:root[data-theme="light"] .bg-black\/20 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+:root[data-theme="light"] .bg-black\/80 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+:root[data-theme="light"] .bg-black\/40 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+:root[data-theme="light"] .bg-black\/50 {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] .bg-black\/70 {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 日间模式下的面板样式 */
+:root[data-theme="light"] .history-panel {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 日间模式下的搜索面板样式 */
+:root[data-theme="light"] #searchPanel .bg-black\/20 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* 日间模式下的历史项样式 */
+:root[data-theme="light"] .history-item {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] .history-item:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 日间模式下的渐变文字 */
+:root[data-theme="light"] .gradient-text {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 日间模式下的搜索标签样式 */
+:root[data-theme="light"] .search-tag {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] .search-tag:hover {
+  background: rgba(99, 102, 241, 0.1) !important;
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* 日间模式下的按钮样式 */
+:root[data-theme="light"] .search-button {
+  background: var(--primary-color) !important;
+  color: white !important;
+}
+
+/* 日间模式下的卡片样式 */
+:root[data-theme="light"] .card-hover {
+  background: var(--surface-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+:root[data-theme="light"] .card-hover:hover {
+  background: var(--surface-hover) !important;
+  border-color: var(--card-hover-border) !important;
+}
+
+/* 日间模式下的输入框样式 */
+:root[data-theme="light"] input[type="text"],
+:root[data-theme="light"] input[type="number"],
+:root[data-theme="light"] select {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] input[type="text"]:focus,
+:root[data-theme="light"] input[type="number"]:focus,
+:root[data-theme="light"] select:focus {
+  border-color: var(--primary-color) !important;
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 日间模式下的占位符文字 */
+:root[data-theme="light"] input::placeholder {
+  color: rgba(30, 41, 59, 0.5) !important;
+}
+
+/* 日间模式下的控制按钮样式 */
+:root[data-theme="light"] .control-btn {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] .control-btn:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 日间模式下的剧集按钮样式 */
+:root[data-theme="light"] #episode-grid button:not(.episode-active) {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] #episode-grid button:not(.episode-active):hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+  color: var(--text-color) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 日间模式下的硬编码背景色调整 */
+:root[data-theme="light"] .bg-\[#111\] {
+  background-color: #ffffff !important;
+}
+
+/* 日间模式下的灰色文字调整 */
+:root[data-theme="light"] .text-gray-300 {
+  color: #64748b !important;
+}
+
+:root[data-theme="light"] .text-gray-400 {
+  color: #64748b !important;
+}
+
+:root[data-theme="light"] .text-gray-500 {
+  color: #64748b !important;
+}
+
+/* 日间模式下的灰色背景调整 */
+:root[data-theme="light"] .bg-gray-700 {
+  background-color: #e2e8f0 !important;
+  color: var(--text-color) !important;
+}
+
+:root[data-theme="light"] .bg-gray-500 {
+  background-color: #cbd5e1 !important;
+  color: var(--text-color) !important;
+}
+
+/* 日间模式下的边框调整 */
+:root[data-theme="light"] .border-gray-800 {
+  border-color: #e2e8f0 !important;
+}
+
+/* 日间模式下的彩色文字调整 */
+:root[data-theme="light"] .text-blue-300,
+:root[data-theme="light"] .text-blue-400 {
+  color: #3b82f6 !important;
+}
+
+:root[data-theme="light"] .text-green-300 {
+  color: #16a34a !important;
+}
+
+:root[data-theme="light"] .text-purple-300 {
+  color: #8b5cf6 !important;
+}
+
+/* 日间模式下的半透明背景调整 */
+:root[data-theme="light"] .bg-opacity-20.bg-blue-500 {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+:root[data-theme="light"] .bg-opacity-20.bg-purple-500 {
+  background-color: rgba(139, 92, 246, 0.15) !important;
+}
+
+:root[data-theme="light"] .bg-opacity-20.bg-green-500 {
+  background-color: rgba(22, 163, 74, 0.15) !important;
 }
 
 /* 综艺节目容器的自适应网格布局 */

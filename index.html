@@ -24,6 +24,9 @@
 
     <!-- 加载 Tailwind CSS（本地JS方式，保持原逻辑）-->
     <script src="libs/tailwindcss.min.js"></script>
+    
+    <!-- 主题管理脚本 -->
+    <script src="js/theme.js"></script>
 </head>
 
 <body class="page-bg text-white">
@@ -43,6 +46,18 @@
     <!-- 顶部功能按钮区：设置 -->
     <nav aria-label="设置功能" class="fixed top-6 right-6 z-10">
         <div class="flex items-center space-x-3">
+
+            <!-- 主题切换按钮 -->
+            <button id="themeToggleButton"
+                class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 hover:border-white/40 rounded-xl px-4 py-2.5 flex items-center gap-2 transition-all duration-300 text-white/90 hover:text-white shadow-lg hover:shadow-xl"
+                aria-label="切换主题" type="button" title="切换日间/夜间模式">
+                <svg id="themeIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <!-- 默认显示太阳图标（当前是夜间模式） -->
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+                <span class="hidden sm:inline" id="themeText">日间</span>
+            </button>
 
             <!-- 原有设置按钮 -->
             <button id="settingsButton"
