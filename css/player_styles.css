@@ -19,15 +19,15 @@
   --page-gradient-end: #ebedee;  /* 柔和灰色 */
   --card-gradient-start: #ffffff;  /* 纯白卡片 */
   --card-gradient-end: #f7fafc;  /* 极浅蓝灰 */
-  --card-accent: rgba(102, 126, 234, 0.08);  /* 淡蓝紫色 */
-  --card-hover-border: rgba(102, 126, 234, 0.4);  /* 悬停边框 */
+  --card-accent: rgba(72, 187, 120, 0.08);  /* 淡绿色 */
+  --card-hover-border: rgba(72, 187, 120, 0.4);  /* 悬停边框 */
   --surface-color: #ffffff;  /* 白色表面 */
   --surface-hover: #f1f5f9;  /* 浅灰悬停 */
   
   /* 新增优雅配色 */
   --button-gradient-start: #48bb78;
   --button-gradient-end: #38a169;
-  --button-shadow: rgba(102, 126, 234, 0.25);
+  --button-shadow: rgba(72, 187, 120, 0.25);
   --card-shadow: rgba(0, 0, 0, 0.08);
   --panel-shadow: rgba(0, 0, 0, 0.12);
   --elegant-green: #2f855a;
@@ -112,7 +112,7 @@ media-player {
   border-color: var(--primary-color) !important;
   color: #fff !important;
   font-weight: 600 !important;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3) !important;
   transform: translateY(-1px) !important;
   border-radius: 8px !important;
 }
@@ -566,7 +566,7 @@ media-player:focus-within #custom-right-controls {
   background: var(--primary-color) !important;
   color: white !important;
   border-color: var(--accent-color) !important;
-  box-shadow: 0 0 12px rgba(99, 102, 241, 0.6);
+  box-shadow: 0 0 12px rgba(72, 187, 120, 0.6);
   transform: translateY(-1px);
 }
 
@@ -1010,9 +1010,9 @@ media-player:focus-within #custom-right-controls {
 }
 
 #skip-control-dropdown #apply-skip-settings:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--primary-color);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
 }
 
 #skip-control-dropdown #reset-skip-settings {
@@ -1022,7 +1022,7 @@ media-player:focus-within #custom-right-controls {
 }
 
 #skip-control-dropdown #reset-skip-settings:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--primary-color);
   color: #ffffff;
   transform: translateY(-1px);
 }
@@ -1484,7 +1484,7 @@ header {
 }
 
 :root[data-theme="light"] .history-panel .history-source {
-  color: #38a169 !important;
+  color: #f59e0b !important;
   font-weight: 500 !important;
 }
 
@@ -1591,7 +1591,7 @@ header {
 :root[data-theme="light"] .history-item:hover {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
   border-color: var(--primary-color) !important;
-  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.15), 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 16px rgba(72, 187, 120, 0.15), 0 2px 6px rgba(0, 0, 0, 0.08) !important;
   transform: translateY(-2px) !important;
 }
 
@@ -1611,7 +1611,7 @@ header {
 }
 
 :root[data-theme="light"] .search-tag:hover {
-  background: rgba(99, 102, 241, 0.1) !important;
+  background: rgba(72, 187, 120, 0.1) !important;
   color: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
 }
@@ -1862,7 +1862,7 @@ header {
 
 /* Toast不同类型的背景色调整 */
 :root[data-theme="light"] #toast.bg-green-500 {
-  background: #16a34a !important;
+  background: var(--primary-color) !important;
   color: white !important;
 }
 
@@ -1928,7 +1928,7 @@ header {
 :root[data-theme="light"] .card-hover:hover {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
   border-color: var(--card-hover-border) !important;
-  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 24px rgba(72, 187, 120, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08) !important;
   transform: translateY(-4px) !important;
 }
 
@@ -1947,7 +1947,7 @@ header {
 :root[data-theme="light"] select:focus {
   border-color: var(--primary-color) !important;
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06) !important;
 }
 
 /* 播放速率选择框特殊样式 */
@@ -1960,7 +1960,7 @@ header {
 
 :root[data-theme="light"] #playback-speed-select:focus {
   border-color: var(--primary-color) !important;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+  box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1) !important;
 }
 
 /* 日间模式下的占位符文字 */
@@ -2050,7 +2050,7 @@ header {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
   color: var(--text-color) !important;
   border-color: var(--primary-color) !important;
-  box-shadow: 0 3px 8px rgba(102, 126, 234, 0.15) !important;
+  box-shadow: 0 3px 8px rgba(72, 187, 120, 0.15) !important;
   transform: translateY(-1px) !important;
 }
 
@@ -2309,12 +2309,12 @@ media-fullscreen-button {
 }
 
 .history-episode {
-  color: rgba(99, 102, 241, 0.9);
+  color: var(--primary-color);
   font-weight: 500;
 }
 
 .history-source {
-  color: rgba(168, 85, 247, 0.9);
+  color: #fbbf24;
 }
 
 .history-time {
