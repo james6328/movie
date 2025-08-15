@@ -1446,7 +1446,7 @@ header {
   backdrop-filter: blur(20px) !important;
 }
 
-/* 播放页历史面板标题和文字 */
+/* 播放页历史面板标题和文字 - 增强对比度 */
 :root[data-theme="light"] .history-panel .gradient-text {
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   -webkit-background-clip: text;
@@ -1455,15 +1455,40 @@ header {
 }
 
 :root[data-theme="light"] .history-panel .text-center {
-  color: var(--text-muted) !important;
+  color: #4a5568 !important;
 }
 
 :root[data-theme="light"] .history-panel .text-lg {
-  color: var(--text-color) !important;
+  color: #2d3748 !important;
+  font-weight: 600 !important;
 }
 
 :root[data-theme="light"] .history-panel .text-sm {
-  color: var(--text-muted) !important;
+  color: #4a5568 !important;
+}
+
+/* 历史项中的具体文字元素 */
+:root[data-theme="light"] .history-panel .history-title {
+  color: #2d3748 !important;
+  font-weight: 600 !important;
+}
+
+:root[data-theme="light"] .history-panel .history-episode {
+  color: var(--primary-color) !important;
+  font-weight: 600 !important;
+}
+
+:root[data-theme="light"] .history-panel .history-source {
+  color: #38a169 !important;
+  font-weight: 500 !important;
+}
+
+:root[data-theme="light"] .history-panel .history-time {
+  color: #718096 !important;
+}
+
+:root[data-theme="light"] .history-panel .history-meta {
+  color: #4a5568 !important;
 }
 
 /* 播放页清空历史按钮 - 优雅设计 */
@@ -1778,6 +1803,35 @@ header {
   color: white !important;
 }
 
+/* 日间模式下的播放器开关样式 - 优雅浅绿色 */
+:root[data-theme="light"] .slider {
+  background: #e2e8f0 !important;
+  border: 1px solid #cbd5e0 !important;
+}
+
+:root[data-theme="light"] .slider:before {
+  background: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[data-theme="light"] .slider:hover {
+  background: #cbd5e0 !important;
+}
+
+:root[data-theme="light"] input:checked+.slider {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%) !important;
+  border-color: #38a169 !important;
+  box-shadow: 0 0 10px rgba(72, 187, 120, 0.3) !important;
+}
+
+:root[data-theme="light"] input:checked+.slider:before {
+  background: #ffffff !important;
+}
+
+:root[data-theme="light"] input:checked+.slider:hover {
+  background: linear-gradient(135deg, #38a169 0%, #2f855a 100%) !important;
+}
+
 /* 日间模式下的按钮样式 */
 :root[data-theme="light"] .search-button {
   background: var(--primary-color) !important;
@@ -1800,20 +1854,35 @@ header {
   transform: translateY(-4px) !important;
 }
 
-/* 日间模式下的输入框样式 */
+/* 日间模式下的输入框样式 - 优雅设计 */
 :root[data-theme="light"] input[type="text"],
 :root[data-theme="light"] input[type="number"],
 :root[data-theme="light"] select {
-  background: rgba(0, 0, 0, 0.05) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
   color: var(--text-color) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(203, 213, 225, 0.6) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
 }
 
 :root[data-theme="light"] input[type="text"]:focus,
 :root[data-theme="light"] input[type="number"]:focus,
 :root[data-theme="light"] select:focus {
   border-color: var(--primary-color) !important;
-  background: rgba(0, 0, 0, 0.08) !important;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* 播放速率选择框特殊样式 */
+:root[data-theme="light"] #playback-speed-select {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1px solid rgba(203, 213, 225, 0.6) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+:root[data-theme="light"] #playback-speed-select:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
 }
 
 /* 日间模式下的占位符文字 */

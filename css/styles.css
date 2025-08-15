@@ -266,7 +266,7 @@ html, body {
   transform: translateY(-1px) !important;
 }
 
-/* 历史面板标题和文字 */
+/* 历史面板标题和文字 - 增强对比度 */
 :root[data-theme="light"] .history-panel .gradient-text {
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   -webkit-background-clip: text;
@@ -275,15 +275,40 @@ html, body {
 }
 
 :root[data-theme="light"] .history-panel .text-center {
-  color: var(--text-muted) !important;
+  color: #4a5568 !important;
 }
 
 :root[data-theme="light"] .history-panel .text-lg {
-  color: var(--text-color) !important;
+  color: #2d3748 !important;
+  font-weight: 600 !important;
 }
 
 :root[data-theme="light"] .history-panel .text-sm {
-  color: var(--text-muted) !important;
+  color: #4a5568 !important;
+}
+
+/* 首页历史项中的具体文字元素 */
+:root[data-theme="light"] .history-panel .history-title {
+  color: #2d3748 !important;
+  font-weight: 600 !important;
+}
+
+:root[data-theme="light"] .history-panel .history-episode {
+  color: var(--primary-color) !important;
+  font-weight: 600 !important;
+}
+
+:root[data-theme="light"] .history-panel .history-source {
+  color: #38a169 !important;
+  font-weight: 500 !important;
+}
+
+:root[data-theme="light"] .history-panel .history-time {
+  color: #718096 !important;
+}
+
+:root[data-theme="light"] .history-panel .history-meta {
+  color: #4a5568 !important;
 }
 
 /* 清空历史按钮 - 优雅设计 */
@@ -504,20 +529,22 @@ html, body {
   transform: translateY(-4px) !important;
 }
 
-/* 日间模式下的输入框样式 */
+/* 日间模式下的输入框样式 - 优雅设计 */
 :root[data-theme="light"] input[type="text"],
 :root[data-theme="light"] input[type="number"],
 :root[data-theme="light"] select {
-  background: rgba(0, 0, 0, 0.05) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
   color: var(--text-color) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(203, 213, 225, 0.6) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
 }
 
 :root[data-theme="light"] input[type="text"]:focus,
 :root[data-theme="light"] input[type="number"]:focus,
 :root[data-theme="light"] select:focus {
   border-color: var(--primary-color) !important;
-  background: rgba(0, 0, 0, 0.08) !important;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06) !important;
 }
 
 /* 日间模式下的占位符文字 */
@@ -740,6 +767,25 @@ input[type="checkbox"]:checked + .toggle-bg + .toggle-dot {
 #preloadingToggle:checked+.toggle-bg {
   background-color: var(--primary-color);
   box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* 日间模式下的开关样式 - 优雅浅绿色 */
+:root[data-theme="light"] #yellowFilterToggle:checked+.toggle-bg,
+:root[data-theme="light"] #adFilterToggle:checked+.toggle-bg,
+:root[data-theme="light"] #doubanToggle:checked+.toggle-bg,
+:root[data-theme="light"] #preloadingToggle:checked+.toggle-bg {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%) !important;
+  box-shadow: 0 0 0 2px rgba(72, 187, 120, 0.2) !important;
+}
+
+:root[data-theme="light"] .toggle-bg {
+  background-color: #e2e8f0 !important;
+  border: 1px solid #cbd5e0 !important;
+}
+
+:root[data-theme="light"] .toggle-dot {
+  background: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
 /* 现代开关点样式 */
