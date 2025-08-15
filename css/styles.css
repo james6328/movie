@@ -17,23 +17,33 @@
   --surface-hover: #334155;  /* 表面悬停 */
 }
 
-/* -------- 日间模式变量 -------- */
+/* -------- 日间模式变量 - 优雅配色方案 -------- */
 :root[data-theme="light"] {
-  --primary-color: #6366f1;  /* 保持紫色主题 */
-  --primary-light: #8b5cf6;  /* 深一点的紫色 */
+  --primary-color: #667eea;  /* 优雅的蓝紫色 */
+  --primary-light: #764ba2;  /* 深紫色 */
   --secondary-color: #f8fafc;  /* 浅色背景 */
-  --accent-color: #8b5cf6;  /* 优雅紫色 */
-  --text-color: #1e293b;  /* 深色文字 */
-  --text-muted: #64748b;  /* 中性灰 */
-  --border-color: rgba(148, 163, 184, 0.2);  /* 稍深边框 */
-  --page-gradient-start: #ffffff;  /* 白色起始 */
-  --page-gradient-end: #f1f5f9;  /* 浅灰结束 */
-  --card-gradient-start: #ffffff;  /* 白色卡片 */
-  --card-gradient-end: #f8fafc;  /* 浅色卡片 */
-  --card-accent: rgba(99, 102, 241, 0.05);  /* 极淡紫色 */
-  --card-hover-border: rgba(99, 102, 241, 0.3);  /* 悬停边框 */
+  --accent-color: #f093fb;  /* 粉紫渐变色 */
+  --text-color: #2d3748;  /* 温和的深色文字 */
+  --text-muted: #718096;  /* 优雅的灰色 */
+  --border-color: rgba(203, 213, 225, 0.6);  /* 柔和边框 */
+  --page-gradient-start: #fdfbfb;  /* 温暖白色 */
+  --page-gradient-end: #ebedee;  /* 柔和灰色 */
+  --card-gradient-start: #ffffff;  /* 纯白卡片 */
+  --card-gradient-end: #f7fafc;  /* 极浅蓝灰 */
+  --card-accent: rgba(102, 126, 234, 0.08);  /* 淡蓝紫色 */
+  --card-hover-border: rgba(102, 126, 234, 0.4);  /* 悬停边框 */
   --surface-color: #ffffff;  /* 白色表面 */
   --surface-hover: #f1f5f9;  /* 浅灰悬停 */
+  
+  /* 新增优雅配色 */
+  --button-gradient-start: #667eea;
+  --button-gradient-end: #764ba2;
+  --button-shadow: rgba(102, 126, 234, 0.25);
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --panel-shadow: rgba(0, 0, 0, 0.12);
+  --elegant-purple: #8b5a9f;
+  --soft-blue: #74b9ff;
+  --warm-gray: #636e72;
 }
 
 /* -------- 2. 统一滚动条样式（全局应用） -------- */
@@ -174,11 +184,13 @@ html, body {
   background-color: rgba(0, 0, 0, 0.15) !important;
 }
 
-/* 日间模式下的面板样式 */
+/* 日间模式下的面板样式 - 优雅设计 */
 :root[data-theme="light"] .history-panel,
 :root[data-theme="light"] .settings-panel {
-  background: rgba(255, 255, 255, 0.95) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%) !important;
+  border: 1px solid rgba(203, 213, 225, 0.6) !important;
+  box-shadow: 0 8px 32px var(--panel-shadow), 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+  backdrop-filter: blur(20px) !important;
 }
 
 /* 设置面板中的开关样式 */
@@ -219,6 +231,41 @@ html, body {
   color: var(--text-muted) !important;
 }
 
+/* 设置面板中的"全选"和"全不选"按钮 - 优雅设计 */
+:root[data-theme="light"] .settings-panel button[onclick*="selectAllAPIs"] {
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* "全选"按钮 */
+:root[data-theme="light"] .settings-panel button[onclick="selectAllAPIs(true)"] {
+  background: linear-gradient(135deg, var(--button-gradient-start) 0%, var(--button-gradient-end) 100%) !important;
+  color: white !important;
+  border: none !important;
+}
+
+:root[data-theme="light"] .settings-panel button[onclick="selectAllAPIs(true)"]:hover {
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--elegant-purple) 100%) !important;
+  box-shadow: 0 4px 16px var(--button-shadow) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* "全不选"按钮 */
+:root[data-theme="light"] .settings-panel button[onclick="selectAllAPIs(false)"] {
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%) !important;
+  color: var(--text-color) !important;
+  border: 1px solid rgba(203, 213, 225, 0.8) !important;
+}
+
+:root[data-theme="light"] .settings-panel button[onclick="selectAllAPIs(false)"]:hover {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-1px) !important;
+}
+
 /* 历史面板标题和文字 */
 :root[data-theme="light"] .history-panel .gradient-text {
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
@@ -239,23 +286,44 @@ html, body {
   color: var(--text-muted) !important;
 }
 
-/* 首页控制按钮样式 */
+/* 清空历史按钮 - 优雅设计 */
+:root[data-theme="light"] .history-panel .clear-history-btn {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+  color: #dc2626 !important;
+  border-radius: 12px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.1) !important;
+}
+
+:root[data-theme="light"] .history-panel .clear-history-btn:hover {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%) !important;
+  border-color: #dc2626 !important;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.2) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 首页控制按钮样式 - 优雅设计 */
 :root[data-theme="light"] #historyButton,
 :root[data-theme="light"] #settingsButton,
 :root[data-theme="light"] #themeToggleButton,
 :root[data-theme="light"] #homeButton {
-  background: rgba(0, 0, 0, 0.05) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
   color: var(--text-color) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(203, 213, 225, 0.8) !important;
+  box-shadow: 0 2px 8px var(--card-shadow), 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+  backdrop-filter: blur(10px) !important;
 }
 
 :root[data-theme="light"] #historyButton:hover,
 :root[data-theme="light"] #settingsButton:hover,
 :root[data-theme="light"] #themeToggleButton:hover,
 :root[data-theme="light"] #homeButton:hover {
-  background: rgba(0, 0, 0, 0.1) !important;
-  color: var(--text-color) !important;
-  border-color: rgba(0, 0, 0, 0.15) !important;
+  background: linear-gradient(135deg, var(--button-gradient-start) 0%, var(--button-gradient-end) 100%) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 4px 16px var(--button-shadow), 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-1px) !important;
 }
 
 /* 搜索按钮特殊处理 */
@@ -373,15 +441,19 @@ html, body {
   color: white !important;
 }
 
-/* 日间模式下的历史项样式 */
+/* 日间模式下的历史项样式 - 优雅设计 */
 :root[data-theme="light"] .history-item {
-  background: rgba(0, 0, 0, 0.03) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1px solid rgba(203, 213, 225, 0.5) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+  border-radius: 16px !important;
 }
 
 :root[data-theme="light"] .history-item:hover {
-  background: rgba(0, 0, 0, 0.05) !important;
-  border-color: rgba(0, 0, 0, 0.15) !important;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.15), 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+  transform: translateY(-2px) !important;
 }
 
 /* 日间模式下的渐变文字 */
@@ -392,17 +464,22 @@ html, body {
   -webkit-text-fill-color: transparent;
 }
 
-/* 日间模式下的搜索标签样式 */
+/* 日间模式下的搜索标签样式 - 优雅设计 */
 :root[data-theme="light"] .search-tag {
-  background: rgba(0, 0, 0, 0.05) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
   color: var(--text-color) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(203, 213, 225, 0.6) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+  border-radius: 20px !important;
+  font-weight: 500 !important;
 }
 
 :root[data-theme="light"] .search-tag:hover {
-  background: rgba(99, 102, 241, 0.1) !important;
-  color: var(--primary-color) !important;
+  background: linear-gradient(135deg, var(--button-gradient-start) 0%, var(--button-gradient-end) 100%) !important;
+  color: white !important;
   border-color: var(--primary-color) !important;
+  box-shadow: 0 4px 12px var(--button-shadow) !important;
+  transform: translateY(-1px) !important;
 }
 
 /* 日间模式下的按钮样式 */
@@ -411,16 +488,20 @@ html, body {
   color: white !important;
 }
 
-/* 日间模式下的卡片样式 */
+/* 日间模式下的卡片样式 - 优雅设计 */
 :root[data-theme="light"] .card-hover {
-  background: var(--surface-color) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
   color: var(--text-color) !important;
-  border-color: var(--border-color) !important;
+  border: 1px solid rgba(203, 213, 225, 0.4) !important;
+  box-shadow: 0 2px 8px var(--card-shadow), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  border-radius: 16px !important;
 }
 
 :root[data-theme="light"] .card-hover:hover {
-  background: var(--surface-hover) !important;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
   border-color: var(--card-hover-border) !important;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  transform: translateY(-4px) !important;
 }
 
 /* 日间模式下的输入框样式 */
