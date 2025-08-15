@@ -1,13 +1,13 @@
 /* -------- 1. 全局 CSS 变量（现代简约风格） -------- */
 :root {
-  --primary-color: #48bb78;
-  /* 现代绿色 */
-  --primary-light: #38a169;
-  /* 深绿色 */
+  --primary-color: #6366f1;
+  /* 现代紫色 */
+  --primary-light: #a5b4fc;
+  /* 浅紫色 */
   --secondary-color: #0f0f23;
   /* 深蓝黑 */
-  --accent-color: #68d391;
-  /* 优雅绿色 */
+  --accent-color: #8b5cf6;
+  /* 优雅紫色 */
   --text-color: #f8fafc;
   /* 纯净白 */
   --text-muted: #94a3b8;
@@ -22,9 +22,9 @@
   /* 卡片渐变起始 */
   --card-gradient-end: #16213e;
   /* 卡片渐变结束 */
-  --card-accent: rgba(72, 187, 120, 0.05);
+  --card-accent: rgba(99, 102, 241, 0.05);
   /* 极淡紫色 */
-  --card-hover-border: rgba(72, 187, 120, 0.3);
+  --card-hover-border: rgba(99, 102, 241, 0.3);
   /* 悬停边框 */
   --surface-color: #1e293b;
   /* 表面颜色 */
@@ -118,9 +118,9 @@ body::-webkit-scrollbar-thumb:hover,
 .page-bg {
   background:
     linear-gradient(180deg, var(--page-gradient-start), var(--page-gradient-end)),
-    radial-gradient(circle at 20% 80%, rgba(72, 187, 120, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(72, 187, 120, 0.02) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(72, 187, 120, 0.01) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(99, 102, 241, 0.01) 0%, transparent 50%);
   background-attachment: fixed;
   min-height: 100vh;
 }
@@ -779,29 +779,80 @@ body {
   border: 1px solid var(--primary-color) !important;
 }
 
+/* 通用搜索结果卡片标签样式 - 根据内容自动区分 */
+:root[data-theme="light"] .card-hover span[class*="bg-green"]:not([class*="bg-green-500"]):not([class*="bg-green-600"]) {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+  color: #0369a1 !important;
+  border: 1px solid rgba(3, 105, 161, 0.2) !important;
+}
+
+/* 年份标签 - 匹配包含数字的标签 */
+:root[data-theme="light"] .card-hover span[class*="bg-"]:has-text(/^\d{4}$/) {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+  color: #0369a1 !important;
+  border: 1px solid rgba(3, 105, 161, 0.2) !important;
+}
+
+/* 为包含年份的span添加样式 - 基于位置和内容 */
+:root[data-theme="light"] .card-hover span:nth-child(2),
+:root[data-theme="light"] .card-hover span:nth-of-type(2),
+:root[data-theme="light"] .card-hover .flex span:last-child,
+:root[data-theme="light"] .card-hover span[class*="bg-"]:nth-child(even) {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+  color: #0369a1 !important;
+  border: 1px solid rgba(3, 105, 161, 0.2) !important;
+}
+
+/* 强制覆盖所有可能的绿色背景标签为蓝色（年份） */
+:root[data-theme="light"] .card-hover span[class*="bg-green-200"],
+:root[data-theme="light"] .card-hover span[class*="bg-emerald-200"],
+:root[data-theme="light"] .card-hover span[class*="bg-teal-200"] {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+  color: #0369a1 !important;
+  border: 1px solid rgba(3, 105, 161, 0.2) !important;
+}
+
 /* 自定义API添加按钮和其他紫色按钮修复 */
 :root[data-theme="light"] button[style*="purple"],
 :root[data-theme="light"] button[style*="#8b5cf6"],
 :root[data-theme="light"] button[style*="#a855f7"],
 :root[data-theme="light"] button[style*="#9333ea"],
+:root[data-theme="light"] button[style*="#6366f1"],
 :root[data-theme="light"] .bg-purple-500,
 :root[data-theme="light"] .bg-purple-600,
 :root[data-theme="light"] .bg-violet-500,
-:root[data-theme="light"] .bg-violet-600 {
+:root[data-theme="light"] .bg-violet-600,
+:root[data-theme="light"] .bg-indigo-500,
+:root[data-theme="light"] .bg-indigo-600,
+:root[data-theme="light"] [class*="bg-purple"],
+:root[data-theme="light"] [class*="bg-violet"],
+:root[data-theme="light"] [class*="bg-indigo"],
+:root[data-theme="light"] button.rounded-full,
+:root[data-theme="light"] .settings-panel button:not([onclick*="selectAllAPIs"]) {
   background: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
+  color: white !important;
 }
 
 :root[data-theme="light"] button[style*="purple"]:hover,
 :root[data-theme="light"] button[style*="#8b5cf6"]:hover,
 :root[data-theme="light"] button[style*="#a855f7"]:hover,
 :root[data-theme="light"] button[style*="#9333ea"]:hover,
+:root[data-theme="light"] button[style*="#6366f1"]:hover,
 :root[data-theme="light"] .bg-purple-500:hover,
 :root[data-theme="light"] .bg-purple-600:hover,
 :root[data-theme="light"] .bg-violet-500:hover,
-:root[data-theme="light"] .bg-violet-600:hover {
+:root[data-theme="light"] .bg-violet-600:hover,
+:root[data-theme="light"] .bg-indigo-500:hover,
+:root[data-theme="light"] .bg-indigo-600:hover,
+:root[data-theme="light"] [class*="bg-purple"]:hover,
+:root[data-theme="light"] [class*="bg-violet"]:hover,
+:root[data-theme="light"] [class*="bg-indigo"]:hover,
+:root[data-theme="light"] button.rounded-full:hover,
+:root[data-theme="light"] .settings-panel button:not([onclick*="selectAllAPIs"]):hover {
   background: var(--primary-light) !important;
   border-color: var(--primary-light) !important;
+  color: white !important;
 }
 
 /* -------- 4. 按钮 & 卡片过渡（优化） -------- */
@@ -880,7 +931,7 @@ input[type="checkbox"]:checked+.toggle-bg+.toggle-dot {
 .card-hover:hover {
   border-color: var(--card-hover-border);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(72, 187, 120, 0.15);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
   background: var(--surface-hover);
 }
 
@@ -951,7 +1002,7 @@ input[type="checkbox"]:checked+.toggle-bg+.toggle-dot {
 #doubanToggle:checked+.toggle-bg,
 #preloadingToggle:checked+.toggle-bg {
   background-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(72, 187, 120, 0.2);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
 }
 
 /* 日间模式下的开关样式 - 优雅浅绿色 */
@@ -979,7 +1030,7 @@ input[type="checkbox"]:checked+.toggle-bg+.toggle-dot {
 #doubanToggle:checked~.toggle-dot,
 #preloadingToggle:checked~.toggle-dot {
   transform: translateX(1.5rem);
-  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.4);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
 }
 
 /* 现代焦点与悬停样式 */
@@ -991,7 +1042,7 @@ input[type="checkbox"]:checked+.toggle-bg+.toggle-dot {
 #doubanToggle:hover+.toggle-bg,
 #preloadingToggle:focus+.toggle-bg,
 #preloadingToggle:hover+.toggle-bg {
-  box-shadow: 0 0 0 2px rgba(72, 187, 120, 0.2);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
 }
 
 /* 现代过渡效果 */
@@ -1310,11 +1361,11 @@ body {
 }
 
 .history-episode {
-  color: var(--primary-color);
+  color: #3b82f6;
 }
 
 .history-source {
-  color: #fbbf24;
+  color: #10b981;
 }
 
 .history-time {

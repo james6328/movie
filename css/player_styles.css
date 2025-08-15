@@ -2309,12 +2309,12 @@ media-fullscreen-button {
 }
 
 .history-episode {
-  color: var(--primary-color);
+  color: rgba(99, 102, 241, 0.9);
   font-weight: 500;
 }
 
 .history-source {
-  color: #fbbf24;
+  color: rgba(168, 85, 247, 0.9);
 }
 
 .history-time {
