@@ -452,13 +452,25 @@ body {
   background: rgba(220, 38, 38, 0.1) !important;
 }
 
-/* 清除搜索历史按钮 */
+/* 清除搜索历史按钮 - 优雅设计 */
 :root[data-theme="light"] #clearHistoryBtn {
-  color: rgba(30, 41, 59, 0.6) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  color: #dc2626 !important;
+  border: 1px solid rgba(220, 38, 38, 0.2) !important;
+  border-radius: 8px !important;
+  padding: 6px 12px !important;
+  font-weight: 500 !important;
+  font-size: 0.75rem !important;
+  box-shadow: 0 1px 3px rgba(220, 38, 38, 0.1) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 :root[data-theme="light"] #clearHistoryBtn:hover {
-  color: rgba(30, 41, 59, 0.9) !important;
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%) !important;
+  color: #b91c1c !important;
+  border-color: #dc2626 !important;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.2) !important;
+  transform: translateY(-1px) !important;
 }
 
 /* 日间模式下的模态框样式 */
@@ -678,6 +690,45 @@ body {
   background-color: #ffffff !important;
 }
 
+/* 豆瓣热门区域标题 - 日间模式优化 */
+:root[data-theme="light"] #doubanArea h2 {
+  color: var(--text-color) !important;
+  font-weight: 700 !important;
+}
+
+/* 豆瓣热门卡片标题区域 - 日间模式优化 */
+:root[data-theme="light"] #douban-results .bg-\[#111\] {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border-top: 1px solid rgba(203, 213, 225, 0.3) !important;
+}
+
+/* 豆瓣热门卡片标题按钮 - 日间模式优化 */
+:root[data-theme="light"] .douban-search-btn {
+  color: var(--text-color) !important;
+  font-weight: 600 !important;
+  padding: 8px 4px !important;
+  border-radius: 6px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+:root[data-theme="light"] .douban-search-btn:hover {
+  color: var(--primary-color) !important;
+  background: rgba(72, 187, 120, 0.1) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 豆瓣热门卡片整体 - 日间模式优化 */
+:root[data-theme="light"] #douban-results > div {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1px solid rgba(203, 213, 225, 0.4) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+:root[data-theme="light"] #douban-results > div:hover {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 8px 24px rgba(72, 187, 120, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
 /* 日间模式下的灰色文字调整 */
 :root[data-theme="light"] .text-gray-300 {
   color: #64748b !important;
@@ -842,53 +893,85 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* 豆瓣热门标签样式 - 日间模式绿色主题 */
-:root[data-theme="light"] .category-btn,
-:root[data-theme="light"] .filter-btn,
-:root[data-theme="light"] button[class*="bg-pink"],
-:root[data-theme="light"] button[class*="bg-rose"],
-:root[data-theme="light"] .bg-pink-500,
-:root[data-theme="light"] .bg-rose-500,
-:root[data-theme="light"] .bg-red-400,
-:root[data-theme="light"] button[style*="pink"],
-:root[data-theme="light"] button[style*="rose"],
-:root[data-theme="light"] button[style*="#ec4899"],
-:root[data-theme="light"] button[style*="#f43f5e"] {
-  background: var(--primary-color) !important;
+/* 豆瓣热门切换按钮容器 - 日间模式优化 */
+:root[data-theme="light"] .bg-\[#222\].rounded-full {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+  border: 1px solid rgba(203, 213, 225, 0.6) !important;
+  padding: 2px !important;
+}
+
+/* 豆瓣热门电影/电视剧切换按钮 - 日间模式优化 */
+:root[data-theme="light"] #douban-movie-toggle,
+:root[data-theme="light"] #douban-tv-toggle {
+  background: transparent !important;
+  color: var(--text-color) !important;
+  border: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 豆瓣热门电影/电视剧切换按钮激活状态 */
+:root[data-theme="light"] #douban-movie-toggle.bg-pink-600,
+:root[data-theme="light"] #douban-tv-toggle.bg-pink-600 {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%) !important;
   color: white !important;
   border-color: var(--primary-color) !important;
+  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.25) !important;
 }
 
-/* 豆瓣热门标签悬停状态 */
-:root[data-theme="light"] .category-btn:hover,
-:root[data-theme="light"] .filter-btn:hover,
-:root[data-theme="light"] button[class*="bg-pink"]:hover,
-:root[data-theme="light"] button[class*="bg-rose"]:hover,
-:root[data-theme="light"] .bg-pink-500:hover,
-:root[data-theme="light"] .bg-rose-500:hover,
-:root[data-theme="light"] .bg-red-400:hover,
-:root[data-theme="light"] button[style*="pink"]:hover,
-:root[data-theme="light"] button[style*="rose"]:hover,
-:root[data-theme="light"] button[style*="#ec4899"]:hover,
-:root[data-theme="light"] button[style*="#f43f5e"]:hover {
-  background: var(--primary-light) !important;
+/* 豆瓣热门电影/电视剧切换按钮悬停状态 */
+:root[data-theme="light"] #douban-movie-toggle:hover,
+:root[data-theme="light"] #douban-tv-toggle:hover {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%) !important;
   color: white !important;
-  border-color: var(--primary-light) !important;
+  border-color: var(--primary-color) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.2) !important;
 }
 
-/* 豆瓣热门标签激活状态 */
-:root[data-theme="light"] .category-btn.active,
-:root[data-theme="light"] .filter-btn.active,
-:root[data-theme="light"] button[class*="bg-pink"].active,
-:root[data-theme="light"] button[class*="bg-rose"].active {
-  background: var(--accent-color) !important;
+/* 豆瓣热门标签按钮 - 日间模式优化 */
+:root[data-theme="light"] #douban-tags button {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  color: var(--text-color) !important;
+  border: 1px solid rgba(203, 213, 225, 0.6) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-weight: 500 !important;
+}
+
+/* 豆瓣热门标签按钮悬停状态 */
+:root[data-theme="light"] #douban-tags button:hover {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.2) !important;
+}
+
+/* 豆瓣热门标签按钮激活状态 */
+:root[data-theme="light"] #douban-tags button.bg-pink-600 {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--soft-green) 100%) !important;
   color: white !important;
   border-color: var(--accent-color) !important;
-  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.3) !important;
+  box-shadow: 0 2px 8px rgba(104, 211, 145, 0.3) !important;
+  font-weight: 600 !important;
+}
+
+/* 豆瓣热门换一批按钮 - 日间模式优化 */
+:root[data-theme="light"] #douban-refresh {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%) !important;
+  color: white !important;
+  border: 1px solid var(--primary-color) !important;
+  box-shadow: 0 2px 6px rgba(72, 187, 120, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+:root[data-theme="light"] #douban-refresh:hover {
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--elegant-green) 100%) !important;
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3) !important;
+  transform: translateY(-1px) !important;
 }
 
 /* 通用分类标签按钮 - 基于位置和内容的通用规则 */
-:root[data-theme="light"] .flex button:not(.quality-tag):not([onclick*="selectAllAPIs"]),
+:root[data-theme="light"] .flex button:not(.quality-tag):not([onclick*="selectAllAPIs"]):not(#douban-movie-toggle):not(#douban-tv-toggle):not(#douban-refresh),
 :root[data-theme="light"] .grid button:not(.quality-tag):not([onclick*="selectAllAPIs"]),
 :root[data-theme="light"] nav button:not(.quality-tag):not([onclick*="selectAllAPIs"]),
 :root[data-theme="light"] .category-container button:not(.quality-tag),
@@ -900,7 +983,7 @@ body {
 }
 
 /* 通用分类标签按钮悬停状态 */
-:root[data-theme="light"] .flex button:not(.quality-tag):not([onclick*="selectAllAPIs"]):hover,
+:root[data-theme="light"] .flex button:not(.quality-tag):not([onclick*="selectAllAPIs"]):not(#douban-movie-toggle):not(#douban-tv-toggle):not(#douban-refresh):hover,
 :root[data-theme="light"] .grid button:not(.quality-tag):not([onclick*="selectAllAPIs"]):hover,
 :root[data-theme="light"] nav button:not(.quality-tag):not([onclick*="selectAllAPIs"]):hover,
 :root[data-theme="light"] .category-container button:not(.quality-tag):hover,
