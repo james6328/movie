@@ -690,43 +690,56 @@ body {
   background-color: #ffffff !important;
 }
 
-/* 豆瓣热门区域标题 - 日间模式优化 */
-:root[data-theme="light"] #doubanArea h2 {
-  color: var(--text-color) !important;
-  font-weight: 700 !important;
+/* 豆瓣热门切换按钮容器 - 日间模式优化 */
+:root[data-theme="light"] .bg-\[#222\].rounded-full {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+  border: 1px solid rgba(203, 213, 225, 0.6) !important;
+  padding: 2px !important;
 }
 
-/* 豆瓣热门卡片标题区域 - 日间模式优化 */
-:root[data-theme="light"] #douban-results .bg-\[#111\] {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
-  border-top: 1px solid rgba(203, 213, 225, 0.3) !important;
-}
-
-/* 豆瓣热门卡片标题按钮 - 日间模式优化 */
-:root[data-theme="light"] .douban-search-btn {
+/* 豆瓣热门电影/电视剧切换按钮 - 日间模式优化 */
+:root[data-theme="light"] #douban-movie-toggle,
+:root[data-theme="light"] #douban-tv-toggle {
+  background: transparent !important;
   color: var(--text-color) !important;
-  font-weight: 600 !important;
-  padding: 8px 4px !important;
-  border-radius: 6px !important;
+  border: none !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-:root[data-theme="light"] .douban-search-btn:hover {
-  color: var(--primary-color) !important;
-  background: rgba(72, 187, 120, 0.1) !important;
-  transform: translateY(-1px) !important;
-}
-
-/* 豆瓣热门卡片整体 - 日间模式优化 */
-:root[data-theme="light"] #douban-results > div {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
-  border: 1px solid rgba(203, 213, 225, 0.4) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
-}
-
-:root[data-theme="light"] #douban-results > div:hover {
+/* 豆瓣热门电影/电视剧切换按钮激活状态 */
+:root[data-theme="light"] #douban-movie-toggle.bg-pink-600,
+:root[data-theme="light"] #douban-tv-toggle.bg-pink-600 {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%) !important;
+  color: white !important;
   border-color: var(--primary-color) !important;
-  box-shadow: 0 8px 24px rgba(72, 187, 120, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.25) !important;
+}
+
+/* 豆瓣热门标签按钮 - 日间模式优化 */
+:root[data-theme="light"] #douban-tags button {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  color: var(--text-color) !important;
+  border: 1px solid rgba(203, 213, 225, 0.6) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-weight: 500 !important;
+}
+
+/* 豆瓣热门标签按钮悬停状态 */
+:root[data-theme="light"] #douban-tags button:hover {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.2) !important;
+}
+
+/* 豆瓣热门标签按钮激活状态 */
+:root[data-theme="light"] #douban-tags button.bg-pink-600 {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--soft-green) 100%) !important;
+  color: white !important;
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 2px 8px rgba(104, 211, 145, 0.3) !important;
+  font-weight: 600 !important;
 }
 
 /* 日间模式下的灰色文字调整 */
@@ -817,47 +830,15 @@ body {
   background-color: rgba(22, 163, 74, 0.15) !important;
 }
 
-/* 搜索结果卡片标签差异化颜色 */
-:root[data-theme="light"] .card-tag-year {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
-  color: #0369a1 !important;
-  border: 1px solid rgba(3, 105, 161, 0.2) !important;
-}
-
-:root[data-theme="light"] .card-tag-type {
+/* 搜索结果卡片 > 类型标签（绿色） */
+:root[data-theme="light"] .result-type {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%) !important;
   color: white !important;
   border: 1px solid var(--primary-color) !important;
 }
 
-/* 通用搜索结果卡片标签样式 - 根据内容自动区分，但排除画质标签 */
-:root[data-theme="light"] .card-hover span[class*="bg-green"]:not([class*="bg-green-500"]):not([class*="bg-green-600"]):not(.quality-tag) {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
-  color: #0369a1 !important;
-  border: 1px solid rgba(3, 105, 161, 0.2) !important;
-}
-
-/* 年份标签 - 匹配包含数字的标签 */
-:root[data-theme="light"] .card-hover span[class*="bg-"]:has-text(/^\d{4}$/) {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
-  color: #0369a1 !important;
-  border: 1px solid rgba(3, 105, 161, 0.2) !important;
-}
-
-/* 为包含年份的span添加样式 - 基于位置和内容 */
-:root[data-theme="light"] .card-hover span:nth-child(2),
-:root[data-theme="light"] .card-hover span:nth-of-type(2),
-:root[data-theme="light"] .card-hover .flex span:last-child,
-:root[data-theme="light"] .card-hover span[class*="bg-"]:nth-child(even) {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
-  color: #0369a1 !important;
-  border: 1px solid rgba(3, 105, 161, 0.2) !important;
-}
-
-/* 强制覆盖所有可能的绿色背景标签为蓝色（年份），但排除画质标签 */
-:root[data-theme="light"] .card-hover span[class*="bg-green-200"]:not(.quality-tag),
-:root[data-theme="light"] .card-hover span[class*="bg-emerald-200"]:not(.quality-tag),
-:root[data-theme="light"] .card-hover span[class*="bg-teal-200"]:not(.quality-tag) {
+/* 搜索结果卡片 > 年份标签（蓝色） */
+:root[data-theme="light"] .result-year {
   background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
   color: #0369a1 !important;
   border: 1px solid rgba(3, 105, 161, 0.2) !important;

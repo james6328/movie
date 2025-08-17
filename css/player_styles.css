@@ -2290,40 +2290,6 @@ media-fullscreen-button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* 豆瓣热门标签样式 - 日间模式绿色主题 */
-:root[data-theme="light"] .category-btn,
-:root[data-theme="light"] .filter-btn,
-:root[data-theme="light"] button[class*="bg-pink"]:not(.quality-tag),
-:root[data-theme="light"] button[class*="bg-rose"]:not(.quality-tag),
-:root[data-theme="light"] .bg-pink-500:not(.quality-tag),
-:root[data-theme="light"] .bg-rose-500:not(.quality-tag),
-:root[data-theme="light"] .bg-red-400:not(.quality-tag),
-:root[data-theme="light"] button[style*="pink"]:not(.quality-tag),
-:root[data-theme="light"] button[style*="rose"]:not(.quality-tag),
-:root[data-theme="light"] button[style*="#ec4899"]:not(.quality-tag),
-:root[data-theme="light"] button[style*="#f43f5e"]:not(.quality-tag) {
-  background: var(--primary-color) !important;
-  color: white !important;
-  border-color: var(--primary-color) !important;
-}
-
-/* 豆瓣热门标签悬停状态 */
-:root[data-theme="light"] .category-btn:hover,
-:root[data-theme="light"] .filter-btn:hover,
-:root[data-theme="light"] button[class*="bg-pink"]:not(.quality-tag):hover,
-:root[data-theme="light"] button[class*="bg-rose"]:not(.quality-tag):hover,
-:root[data-theme="light"] .bg-pink-500:not(.quality-tag):hover,
-:root[data-theme="light"] .bg-rose-500:not(.quality-tag):hover,
-:root[data-theme="light"] .bg-red-400:not(.quality-tag):hover,
-:root[data-theme="light"] button[style*="pink"]:not(.quality-tag):hover,
-:root[data-theme="light"] button[style*="rose"]:not(.quality-tag):hover,
-:root[data-theme="light"] button[style*="#ec4899"]:not(.quality-tag):hover,
-:root[data-theme="light"] button[style*="#f43f5e"]:not(.quality-tag):hover {
-  background: var(--primary-light) !important;
-  color: white !important;
-  border-color: var(--primary-light) !important;
-}
-
 /* 历史面板样式 */
 .history-panel {
   width: 400px;
